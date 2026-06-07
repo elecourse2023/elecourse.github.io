@@ -1,166 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ELECOURSE</title>
+<title>ELECOURSE Research Group</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
 }
 
 body{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-    background:#0d1117;
-    color:#f0f6fc;
-    line-height:1.7;
-}
-
-a{
-    color:#58a6ff;
-    text-decoration:none;
-}
-
-a:hover{
-    text-decoration:underline;
+background:#f8fafc;
+color:#1e293b;
+line-height:1.7;
 }
 
 .container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+width:90%;
+max-width:1200px;
+margin:auto;
 }
 
-header{
-    border-bottom:1px solid #30363d;
-    padding:20px 0;
+section{
+padding:80px 0;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:1.5rem;
-    font-weight:bold;
-}
-
-.nav-links{
-    display:flex;
-    gap:30px;
-}
-
-.hero{
-    padding:120px 0;
-    text-align:center;
-}
-
-.hero h1{
-    font-size:4rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:800px;
-    margin:auto;
-    color:#8b949e;
-    font-size:1.2rem;
-}
-
-.hero-buttons{
-    margin-top:40px;
-}
-
-.btn{
-    display:inline-block;
-    padding:12px 24px;
-    border-radius:8px;
-    margin:10px;
-    transition:0.3s;
-}
-
-.btn-primary{
-    background:#238636;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#2ea043;
-}
-
-.btn-secondary{
-    border:1px solid #30363d;
-    color:white;
-}
-
-.section{
-    padding:80px 0;
+h1,h2,h3{
+margin-bottom:20px;
 }
 
 .section-title{
-    font-size:2rem;
-    margin-bottom:30px;
+font-size:2rem;
+font-weight:700;
+margin-bottom:40px;
+border-left:5px solid #2563eb;
+padding-left:15px;
 }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+/* ================= HERO ================= */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(
+rgba(0,0,0,0.55),
+rgba(0,0,0,0.55)
+),
+url('images/team_photo.jpg');
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:800px;
+margin:auto;
+}
+
+.hero-buttons{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 28px;
+margin:10px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn-primary{
+background:#2563eb;
+color:white;
+}
+
+.btn-primary:hover{
+background:#1d4ed8;
+}
+
+.btn-outline{
+border:2px solid white;
+color:white;
+}
+
+.btn-outline:hover{
+background:white;
+color:black;
+}
+
+/* ================= NAV ================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+z-index:999;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 50px;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:#334155;
+font-weight:500;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:12px;
+}
+
+/* ================= RESEARCH ================= */
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#161b22;
-    border:1px solid #30363d;
-    border-radius:12px;
-    padding:25px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 20px rgba(0,0,0,0.06);
+transition:0.3s;
 }
 
-.card h3{
-    margin-bottom:10px;
+.card:hover{
+transform:translateY(-5px);
 }
 
-.card p{
-    color:#8b949e;
-}
+/* ================= PROJECT ================= */
 
 .project{
-    background:#161b22;
-    padding:30px;
-    border-radius:12px;
-    border:1px solid #30363d;
+background:white;
 }
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    text-align:center;
+.project img{
+width:100%;
+border-radius:10px;
+margin-top:20px;
 }
 
-.stat-box{
-    background:#161b22;
-    padding:25px;
-    border-radius:12px;
+/* ================= MEMBERS ================= */
+
+.member-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-.stat-number{
-    font-size:2rem;
-    font-weight:bold;
-    color:#58a6ff;
+.member{
+background:white;
+padding:20px;
+text-align:center;
+border-radius:12px;
+box-shadow:0 4px 20px rgba(0,0,0,0.06);
 }
+
+.member img{
+width:160px;
+height:160px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+/* ================= PUBLICATIONS ================= */
+
+.pub-list{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 20px rgba(0,0,0,0.06);
+}
+
+.pub-item{
+margin-bottom:20px;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:12px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+background:#0f172a;
+color:white;
+text-align:center;
+}
+
+.contact a{
+color:#60a5fa;
+text-decoration:none;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
-    border-top:1px solid #30363d;
-    padding:30px 0;
-    text-align:center;
-    color:#8b949e;
+background:#020617;
+color:#94a3b8;
+text-align:center;
+padding:20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.nav-links{
+display:none;
+}
+
 }
 
 </style>
@@ -168,50 +282,99 @@ footer{
 
 <body>
 
-<header>
-<div class="container">
+<!-- ================= NAV ================= -->
+
 <nav>
-<div class="logo">ELECOURSE</div>
+
+<div class="nav-container">
+
+<div class="logo">
+ELECOURSE
+</div>
 
 <div class="nav-links">
 <a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#reports">Reports</a>
-<a href="#team">Team</a>
-<a href="#recruitment">Recruitment</a>
+<a href="#research">Research</a>
+<a href="#project">Projects</a>
+<a href="#members">Members</a>
+<a href="#publications">Reports</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </div>
+
+</div>
+
 </nav>
-</div>
-</header>
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
-<div class="container">
+<div>
 
-<h1>ELECOURSE</h1>
+<h1>ELECOURSE Research Group</h1>
 
 <p>
-Engineering Beyond the Classroom
-
-<br><br>
-
-ELECOURSE is a student-led engineering project community dedicated to
-hardware design, signal processing, machine learning, and biomedical
-engineering research through end-to-end project development.
-
-ELECOURSE는 하드웨어 설계, 신호 처리, 머신 러닝 및 유효검증을
-전 과정에 걸쳐 수행하는 학생 주도형 엔지니어링 프로젝트 커뮤니티입니다.
+Interdisciplinary Engineering Research Community
+focusing on Biomedical Signal Processing,
+Machine Learning, Embedded Systems,
+and Healthcare Technologies.
 </p>
 
 <div class="hero-buttons">
 
-<a href="https://github.com/ELECOURSE" class="btn btn-primary">
+<a href="#project" class="btn btn-primary">
+Current Project
+</a>
+
+<a href="https://github.com/YOUR_GITHUB"
+class="btn btn-outline">
 GitHub
 </a>
 
-<a href="#projects" class="btn btn-secondary">
-Projects
-</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+About ELECOURSE
+</h2>
+
+<div class="about-grid">
+
+<div>
+
+<p>
+
+ELECOURSE is a student-led engineering research group
+that conducts semester-long collaborative projects
+across biomedical engineering, signal processing,
+embedded systems, machine learning,
+and intelligent healthcare technologies.
+
+</p>
+
+<br>
+
+<p>
+
+Every semester, members form interdisciplinary teams
+to design, implement, and validate a complete engineering system,
+from hardware development to algorithm design and experimental evaluation.
+
+</p>
+
+</div>
+
+<img src="images/team_photo.jpg">
 
 </div>
 
@@ -219,107 +382,51 @@ Projects
 
 </section>
 
-<section class="section">
+<!-- ================= RESEARCH ================= -->
+
+<section id="research">
 
 <div class="container">
 
-<h2 class="section-title">Community Statistics</h2>
+<h2 class="section-title">
+Research Areas
+</h2>
 
-<div class="stats">
-
-<div class="stat-box">
-<div class="stat-number">2023</div>
-Founded
-</div>
-
-<div class="stat-box">
-<div class="stat-number">20+</div>
-Members
-</div>
-
-<div class="stat-box">
-<div class="stat-number">7</div>
-Completed Project
-</div>
-
-<div class="stat-box">
-<div class="stat-number">4</div>
-Technical Teams
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="about" class="section">
-
-<div class="container">
-
-<h2 class="section-title">About ELECOURSE</h2>
-
-<p>
-Every semester, ELECOURSE members collaborate to complete a full
-engineering project from hardware implementation to algorithm
-development and validation.
-Our projects emphasize practical engineering experience,
-research-oriented thinking, and interdisciplinary teamwork.
-
-ELECOURSE 회원들은 매 학기 하드웨어 구현부터 알고리즘 개발 및 검증에 이르기까지
-완전한 엔지니어링 프로젝트를 공동으로 수행합니다.
-저희 프로젝트는 실질적인 엔지니어링 경험,
-연구 중심적 사고, 그리고 학제 간 팀워크를 강조합니다.
-</p>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<div class="container">
-
-<h2 class="section-title">Team Structure</h2>
-
-<div class="cards">
+<div class="research-grid">
 
 <div class="card">
-<h3>Hardware Team</h3>
+<h3>Biomedical Signal Processing</h3>
 <p>
-Sensor integration, embedded systems,
-STM32 firmware development,
-PCB and acquisition systems.
+ECG, PPG, EEG, biosignal filtering,
+feature extraction and physiological analysis.
 </p>
 </div>
 
 <div class="card">
-<h3>Signal Processing Team</h3>
+<h3>Machine Learning</h3>
 <p>
-ECG/PPG filtering,
-feature extraction,
-PAT/PTT computation,
-signal quality assessment.
+Regression, classification,
+healthcare AI,
+and predictive modeling.
 </p>
 </div>
 
 <div class="card">
-<h3>Machine Learning Team</h3>
+<h3>Embedded Systems</h3>
 <p>
-Dataset construction,
-regression models,
-hyperparameter optimization,
-performance evaluation.
+STM32,
+sensor integration,
+real-time acquisition systems,
+wearable devices.
 </p>
 </div>
 
 <div class="card">
-<h3>Validation Team</h3>
+<h3>Digital Healthcare</h3>
 <p>
-Experimental protocol design,
-clinical interpretation,
-statistical validation,
-result analysis.
+Wearable monitoring,
+cuffless blood pressure estimation,
+and personalized medicine.
 </p>
 </div>
 
@@ -329,62 +436,108 @@ result analysis.
 
 </section>
 
-<section id="projects" class="section">
+<!-- ================= PROJECT ================= -->
+
+<section id="project" class="project">
 
 <div class="container">
 
-<h2 class="section-title">Current Project</h2>
-
-<div class="project">
+<h2 class="section-title">
+2026 Spring Project
+</h2>
 
 <h3>
-End-to-End Cuffless Blood Pressure Estimation Pipeline Design
+End-to-End Cuffless Blood Pressure Estimation Pipeline
 </h3>
 
-<br>
-
 <p>
-An integrated biomedical engineering project involving ECG/PPG
-acquisition, signal processing, feature extraction,
-machine learning-based blood pressure estimation,
-and experimental validation.
+
+This project developed a complete cuffless blood pressure
+estimation system based on synchronized ECG and PPG signals.
+
+The framework includes:
+
 </p>
 
-<br>
-
-<ul>
-<li>20 Participants</li>
-<li>84 Measurements</li>
-<li>STM32 + AD8232 + MAX30102</li>
-<li>PAT/PTT-based Estimation</li>
-<li>SVR, Random Forest, Hybrid LASSO-XGBoost</li>
+<ul style="margin-left:25px;margin-top:15px;">
+<li>Hardware Design (STM32 + AD8232 + MAX30102)</li>
+<li>Signal Acquisition</li>
+<li>Signal Processing Pipeline</li>
+<li>PAT/PTT Feature Extraction</li>
+<li>Machine Learning Prediction</li>
+<li>Validation and Performance Evaluation</li>
 </ul>
 
+<img src="images/project_bp.jpg">
+
+</div>
+
+</section>
+
+<!-- ================= MEMBERS ================= -->
+
+<section id="members">
+
+<div class="container">
+
+<h2 class="section-title">
+Members
+</h2>
+
+<div class="member-grid">
+
+<div class="member">
+<img src="images/member1.jpg">
+<h3>Member Name</h3>
+<p>Signal Processing Lead</p>
+</div>
+
+<div class="member">
+<img src="images/member2.jpg">
+<h3>Member Name</h3>
+<p>Machine Learning Lead</p>
+</div>
+
+<div class="member">
+<img src="images/member3.jpg">
+<h3>Member Name</h3>
+<p>Hardware Lead</p>
+</div>
+
+<div class="member">
+<img src="images/member4.jpg">
+<h3>Member Name</h3>
+<p>Validation Lead</p>
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="reports" class="section">
+<!-- ================= PUBLICATIONS ================= -->
+
+<section id="publications">
 
 <div class="container">
 
-<h2 class="section-title">Technical Reports</h2>
+<h2 class="section-title">
+Technical Reports
+</h2>
 
-<div class="card">
+<div class="pub-list">
 
-<h3>
-ELECOURSE 2026 Spring Project Report
-</h3>
+<div class="pub-item">
 
-<p>
+<b>
+ELECOURSE 2026 Spring Project:
 End-to-End Cuffless Blood Pressure Estimation Pipeline Design
-</p>
+</b>
 
 <br>
 
-<a href="#">
+<a href="reports/BP_Project_Report_2026.pdf">
 Download PDF
 </a>
 
@@ -392,34 +545,25 @@ Download PDF
 
 </div>
 
+</div>
+
 </section>
 
-<section id="team" class="section">
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
 
 <div class="container">
 
-<h2 class="section-title">Leadership</h2>
+<h2 class="section-title">
+Gallery
+</h2>
 
-<div class="cards">
+<div class="gallery">
 
-<div class="card">
-<h3>President</h3>
-<p>
-Community management,
-project planning,
-and strategic direction.
-</p>
-</div>
-
-<div class="card">
-<h3>Project Leaders</h3>
-<p>
-HW Team Lead,
-SP Team Lead,
-ML Team Lead,
-VL Team Lead.
-</p>
-</div>
+<img src="images/hardware.jpg">
+<img src="images/signal_processing.png">
+<img src="images/dashboard.png">
 
 </div>
 
@@ -427,25 +571,33 @@ VL Team Lead.
 
 </section>
 
-<section id="recruitment" class="section">
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
 
 <div class="container">
 
-<h2 class="section-title">Join ELECOURSE</h2>
+<h2>
+Contact
+</h2>
 
 <p>
-We welcome students interested in electrical engineering,
-embedded systems,
-signal processing,
-machine learning,
-and healthcare technology.
+Engineering Learning & Research Community
 </p>
 
 <br>
 
-<a href="#" class="btn btn-primary">
-Apply Now
+<p>
+GitHub:
+<a href="https://github.com/YOUR_GITHUB">
+github.com/YOUR_GITHUB
 </a>
+</p>
+
+<p>
+Email:
+your_email@email.com
+</p>
 
 </div>
 
@@ -453,17 +605,8 @@ Apply Now
 
 <footer>
 
-<div class="container">
-
-<p>
-ELECOURSE · Electrical Engineering Project Community
-</p>
-
-<p>
-Engineering Beyond the Classroom
-</p>
-
-</div>
+© 2026 ELECOURSE Research Group.
+All Rights Reserved.
 
 </footer>
 
