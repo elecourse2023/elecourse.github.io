@@ -1,24 +1,463 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>ELECOURSE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ELECOURSE</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#0d1117;
+    color:#f0f6fc;
+    line-height:1.7;
+}
+
+a{
+    color:#58a6ff;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    border-bottom:1px solid #30363d;
+    padding:20px 0;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.hero{
+    padding:120px 0;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    color:#8b949e;
+    font-size:1.2rem;
+}
+
+.hero-buttons{
+    margin-top:40px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 24px;
+    border-radius:8px;
+    margin:10px;
+    transition:0.3s;
+}
+
+.btn-primary{
+    background:#238636;
+    color:white;
+}
+
+.btn-primary:hover{
+    background:#2ea043;
+}
+
+.btn-secondary{
+    border:1px solid #30363d;
+    color:white;
+}
+
+.section{
+    padding:80px 0;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:12px;
+    padding:25px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#8b949e;
+}
+
+.project{
+    background:#161b22;
+    padding:30px;
+    border-radius:12px;
+    border:1px solid #30363d;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    text-align:center;
+}
+
+.stat-box{
+    background:#161b22;
+    padding:25px;
+    border-radius:12px;
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:bold;
+    color:#58a6ff;
+}
+
+footer{
+    border-top:1px solid #30363d;
+    padding:30px 0;
+    text-align:center;
+    color:#8b949e;
+}
+
+</style>
 </head>
 
 <body>
 
+<header>
+<div class="container">
+<nav>
+<div class="logo">ELECOURSE</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#reports">Reports</a>
+<a href="#team">Team</a>
+<a href="#recruitment">Recruitment</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
 <h1>ELECOURSE</h1>
 
 <p>
-Electrical Engineering Project Community
+Engineering Beyond the Classroom
+
+<br><br>
+
+ELECOURSE is a student-led engineering project community dedicated to
+hardware design, signal processing, machine learning, and biomedical
+engineering research through end-to-end project development.
 </p>
 
-<h2>Current Project</h2>
+<div class="hero-buttons">
+
+<a href="https://github.com/ELECOURSE" class="btn btn-primary">
+GitHub
+</a>
+
+<a href="#projects" class="btn btn-secondary">
+Projects
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Community Statistics</h2>
+
+<div class="stats">
+
+<div class="stat-box">
+<div class="stat-number">2025</div>
+Founded
+</div>
+
+<div class="stat-box">
+<div class="stat-number">20+</div>
+Members
+</div>
+
+<div class="stat-box">
+<div class="stat-number">1</div>
+Completed Project
+</div>
+
+<div class="stat-box">
+<div class="stat-number">4</div>
+Technical Teams
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<div class="container">
+
+<h2 class="section-title">About ELECOURSE</h2>
+
+<p>
+Every semester, ELECOURSE members collaborate to complete a full
+engineering project from hardware implementation to algorithm
+development and validation.
+Our projects emphasize practical engineering experience,
+research-oriented thinking, and interdisciplinary teamwork.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="section-title">Team Structure</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Hardware Team</h3>
+<p>
+Sensor integration, embedded systems,
+STM32 firmware development,
+PCB and acquisition systems.
+</p>
+</div>
+
+<div class="card">
+<h3>Signal Processing Team</h3>
+<p>
+ECG/PPG filtering,
+feature extraction,
+PAT/PTT computation,
+signal quality assessment.
+</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning Team</h3>
+<p>
+Dataset construction,
+regression models,
+hyperparameter optimization,
+performance evaluation.
+</p>
+</div>
+
+<div class="card">
+<h3>Validation Team</h3>
+<p>
+Experimental protocol design,
+clinical interpretation,
+statistical validation,
+result analysis.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="section">
+
+<div class="container">
+
+<h2 class="section-title">Current Project</h2>
+
+<div class="project">
+
+<h3>
+End-to-End Cuffless Blood Pressure Estimation Pipeline Design
+</h3>
+
+<br>
+
+<p>
+An integrated biomedical engineering project involving ECG/PPG
+acquisition, signal processing, feature extraction,
+machine learning-based blood pressure estimation,
+and experimental validation.
+</p>
+
+<br>
+
+<ul>
+<li>20 Participants</li>
+<li>84 Measurements</li>
+<li>STM32 + AD8232 + MAX30102</li>
+<li>PAT/PTT-based Estimation</li>
+<li>SVR, Random Forest, Hybrid LASSO-XGBoost</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reports" class="section">
+
+<div class="container">
+
+<h2 class="section-title">Technical Reports</h2>
+
+<div class="card">
+
+<h3>
+ELECOURSE 2026 Spring Project Report
+</h3>
 
 <p>
 End-to-End Cuffless Blood Pressure Estimation Pipeline Design
 </p>
 
-</body>
+<br>
 
+<a href="#">
+Download PDF
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="team" class="section">
+
+<div class="container">
+
+<h2 class="section-title">Leadership</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>President</h3>
+<p>
+Community management,
+project planning,
+and strategic direction.
+</p>
+</div>
+
+<div class="card">
+<h3>Project Leaders</h3>
+<p>
+HW Team Lead,
+SP Team Lead,
+ML Team Lead,
+VL Team Lead.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="recruitment" class="section">
+
+<div class="container">
+
+<h2 class="section-title">Join ELECOURSE</h2>
+
+<p>
+We welcome students interested in electrical engineering,
+embedded systems,
+signal processing,
+machine learning,
+and healthcare technology.
+</p>
+
+<br>
+
+<a href="#" class="btn btn-primary">
+Apply Now
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p>
+ELECOURSE · Electrical Engineering Project Community
+</p>
+
+<p>
+Engineering Beyond the Classroom
+</p>
+
+</div>
+
+</footer>
+
+</body>
 </html>
