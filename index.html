@@ -13,68 +13,39 @@
 
 <style>
 
-/* =====================================================
+/* =========================================================
    ELECOURSE BRAND SYSTEM
-===================================================== */
+========================================================= */
 
-:root {
+:root{
+    --blue:#387ADF;
+    --sky:#71C1EA;
+    --orange:#EFAC4E;
+    --yellow:#FAEA6B;
 
-  /* =========================
-     ELECOURSE CORE COLORS
-  ========================== */
+    --blue-dark:#2457A6;
+    --sky-dark:#3C98C7;
+    --orange-dark:#C77D20;
+    --yellow-dark:#C9B739;
 
-  --blue: #387ADF;
-  --sky: #71C1EA;
-  --orange: #EFAC4E;
-  --yellow: #FAEA6B;
+    --blue-light:#76A5EA;
+    --sky-light:#A8D9F2;
+    --orange-light:#F5CB8F;
+    --yellow-light:#FCF2A0;
 
+    --ink:#172033;
+    --muted:#596477;
 
-  /* =========================
-     BLUE SCALE
-  ========================== */
+    --white:#FFFFFF;
+    --off-white:#F8F8F3;
 
-  --blue-dark: #2457A6;
-  --blue-light: #76A5EA;
-  --blue-pale: #DCE9FB;
-
-
-  /* =========================
-     SKY SCALE
-  ========================== */
-
-  --sky-dark: #3C98C7;
-  --sky-light: #A8D9F2;
-  --sky-pale: #E3F4FC;
-
-
-  /* =========================
-     ORANGE SCALE
-  ========================== */
-
-  --orange-dark: #C77D20;
-  --orange-light: #F5CB8F;
-  --orange-pale: #FBEBD4;
-
-
-  /* =========================
-     YELLOW SCALE
-  ========================== */
-
-  --yellow-dark: #C9B739;
-  --yellow-light: #FCF2A0;
-  --yellow-pale: #FEF9D9;
-
-
-  /* =========================
-     NEUTRALS
-  ========================== */
-
-  --ink: #172033;
-  --muted: #596477;
-  --off-white: #F8F8F3;
-  --white: #FFFFFF;
-
+    --line:3px;
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     margin:0;
@@ -88,14 +59,14 @@ html{
 
 body{
     font-family:'Inter',sans-serif;
-    color:var(--black);
-    background:var(--white);
-    line-height:1.6;
+    background:var(--off-white);
+    color:var(--ink);
+    line-height:1.65;
 }
 
 img{
     display:block;
-    width:100%;
+    max-width:100%;
 }
 
 a{
@@ -104,13 +75,13 @@ a{
 
 .container{
     width:min(1400px,92%);
-    margin:auto;
+    margin:0 auto;
 }
 
 
-/* =====================================================
+/* =========================================================
    NAVIGATION
-===================================================== */
+========================================================= */
 
 nav{
     position:fixed;
@@ -120,17 +91,15 @@ nav{
     z-index:1000;
 
     background:var(--blue);
-    color:var(--yellow);
-
-    border-bottom:var(--border) solid var(--yellow);
+    border-bottom:var(--line) solid var(--yellow);
 }
 
 .nav-container{
-    min-height:72px;
+    min-height:74px;
 
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 
     padding:0 4%;
 }
@@ -142,9 +111,8 @@ nav{
 }
 
 .logo img{
-    width:150px;
+    width:170px;
     height:auto;
-    display:block;
 }
 
 .nav-links{
@@ -153,175 +121,122 @@ nav{
 }
 
 .nav-links a{
-    text-decoration:none;
     margin-left:28px;
 
-    font-size:.86rem;
+    text-decoration:none;
+
+    color:var(--yellow);
+
+    font-size:.82rem;
     font-weight:800;
+
     text-transform:uppercase;
-    letter-spacing:.02em;
+    letter-spacing:.04em;
 
     transition:.2s;
 }
 
 .nav-links a:hover{
-    color:white;
+    color:var(--white);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero{
     min-height:100vh;
-    padding-top:72px;
+    padding-top:74px;
 
     display:grid;
-    grid-template-columns:1fr 34%;
+    grid-template-columns:minmax(0,1fr) 34%;
 
     background:var(--yellow);
+
+    overflow:hidden;
 }
-
-
-/* LEFT HERO */
 
 .hero-main{
     position:relative;
-    overflow:hidden;
 
-    padding:7vw 5vw 5vw;
+    min-height:calc(100vh - 74px);
+
+    padding:6vw 5vw 4vw;
 
     display:flex;
     flex-direction:column;
     justify-content:space-between;
+
+    overflow:hidden;
 }
 
 .hero-brand{
     position:relative;
-    z-index:2;
+    z-index:4;
 }
 
-.hero h1{
-    color:var(--blue);
-
-    font-size:clamp(5rem,13vw,13rem);
-    line-height:.75;
-
-    font-weight:900;
-    letter-spacing:-.09em;
-
-    margin-left:-.04em;
+.hero-logo{
+    width:min(670px,82%);
+    height:auto;
 }
 
 .hero-tagline{
-    margin-top:80px;
+    margin-top:70px;
 
     color:var(--blue);
 
+    font-size:clamp(2.5rem,5vw,5.7rem);
     font-weight:900;
-    font-size:clamp(2.5rem,5vw,5.5rem);
 
-    letter-spacing:-.06em;
-    line-height:.92;
+    letter-spacing:-.07em;
+    line-height:.88;
 }
 
-.hero-bottom{
-    margin-top:70px;
+.hero-description{
+    margin-top:32px;
 
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+    max-width:580px;
 
+    color:var(--blue-dark);
+
+    font-size:1rem;
+    font-weight:600;
+
+    line-height:1.7;
+}
+
+.hero-buttons{
     position:relative;
     z-index:5;
-}
-
-.hero-symbol{
-    position:absolute;
-
-    width:min(58vw,850px);
-    height:auto;
-
-    right:-10%;
-    bottom:-18%;
-
-    z-index:1;
-
-    pointer-events:none;
-}
-
-.hero-brand{
-    position:relative;
-    z-index:2;
-}
-
-.hero-bottom{
-    position:relative;
-    z-index:2;
-}
-   
-/* RIGHT HERO */
-
-.hero-side{
-    background:var(--orange);
-
-    padding:7vw 3vw 4vw;
 
     display:flex;
-    flex-direction:column;
-    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
 
-    border-left:var(--border) solid var(--blue);
+    margin-top:60px;
 }
-
-.hero-side-top{
-    font-size:clamp(1.7rem,3vw,3.5rem);
-
-    font-weight:900;
-    color:var(--yellow);
-
-    line-height:1.05;
-    letter-spacing:-.05em;
-}
-
-.hero-side-info{
-    color:var(--yellow);
-}
-
-.hero-side-info strong{
-    display:block;
-
-    font-size:1.1rem;
-    margin-bottom:15px;
-}
-
-.hero-side-info p{
-    max-width:300px;
-    font-weight:600;
-}
-
-
-/* BUTTON */
 
 .btn{
     display:inline-flex;
+    justify-content:center;
     align-items:center;
 
-    padding:14px 22px;
+    min-height:50px;
+
+    padding:12px 22px;
 
     border:3px solid var(--blue);
 
     text-decoration:none;
 
-    font-size:.88rem;
+    font-size:.83rem;
     font-weight:900;
 
     text-transform:uppercase;
+    letter-spacing:.02em;
 
     transition:.2s;
-
-    border-radius:0;
 }
 
 .btn-primary{
@@ -330,12 +245,12 @@ nav{
 }
 
 .btn-primary:hover{
-    background:var(--cyan);
+    background:var(--sky);
     color:var(--blue);
 }
 
 .btn-outline{
-    background:var(--yellow);
+    background:transparent;
     color:var(--blue);
 }
 
@@ -344,140 +259,255 @@ nav{
     color:var(--yellow);
 }
 
+.hero-symbol{
+    position:absolute;
 
-/* =====================================================
+    width:min(52vw,780px);
+
+    right:-11%;
+    bottom:-20%;
+
+    z-index:1;
+
+    pointer-events:none;
+    user-select:none;
+}
+
+
+/* HERO RIGHT */
+
+.hero-side{
+    padding:6vw 3.2vw 4vw;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:var(--orange);
+
+    border-left:var(--line) solid var(--blue);
+
+    color:var(--blue);
+}
+
+.hero-side-logo{
+    width:190px;
+    height:auto;
+
+    margin-bottom:60px;
+}
+
+.hero-side-title{
+    color:var(--blue);
+
+    font-size:clamp(2rem,3.4vw,4.4rem);
+    font-weight:900;
+
+    line-height:.92;
+    letter-spacing:-.065em;
+}
+
+.hero-side-info{
+    margin-top:80px;
+
+    color:var(--blue);
+}
+
+.hero-side-info strong{
+    display:block;
+
+    margin-bottom:18px;
+
+    font-size:.78rem;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+.hero-side-info p{
+    max-width:300px;
+
+    font-size:.95rem;
+    font-weight:700;
+}
+
+
+/* =========================================================
    COMMON SECTION
-===================================================== */
+========================================================= */
 
 section:not(.hero){
-    border-bottom:var(--border) solid var(--blue);
+    position:relative;
+    overflow:hidden;
+}
+
+.section-inner{
+    position:relative;
+    z-index:2;
 }
 
 .section-header{
     display:grid;
 
-    grid-template-columns:220px 1fr;
+    grid-template-columns:180px 1fr;
 
-    border-bottom:3px solid currentColor;
+    gap:20px;
 
-    padding-bottom:20px;
-    margin-bottom:50px;
+    padding-bottom:24px;
+    margin-bottom:55px;
+
+    border-bottom:var(--line) solid currentColor;
 }
 
 .section-number{
+    font-size:.82rem;
     font-weight:900;
-    font-size:1rem;
+
+    text-transform:uppercase;
+    letter-spacing:.08em;
 }
 
 .section-title{
+    font-size:clamp(3.2rem,6.4vw,7rem);
     font-weight:900;
 
-    font-size:clamp(2.8rem,6vw,6rem);
-
-    line-height:.9;
-
-    letter-spacing:-.07em;
-}
-
-.section-intro{
-    font-size:1.05rem;
-    max-width:750px;
+    letter-spacing:-.075em;
+    line-height:.84;
 }
 
 
-/* =====================================================
+/* =========================================================
    ABOUT
-===================================================== */
+========================================================= */
 
 #about{
+    padding:115px 0;
+
     background:var(--blue);
     color:var(--yellow);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--yellow);
+}
+
+.about-symbol{
+    position:absolute;
+
+    width:670px;
+
+    right:-170px;
+    top:-180px;
+
+    opacity:.09;
+
+    pointer-events:none;
 }
 
 .about-grid{
     display:grid;
 
-    grid-template-columns:1fr 1.15fr;
+    grid-template-columns:.9fr 1.1fr;
 
-    gap:50px;
+    gap:60px;
     align-items:end;
 }
 
 .about-copy{
-    font-size:1.4rem;
+    max-width:580px;
+
+    font-size:1.3rem;
     font-weight:600;
 
-    max-width:580px;
+    line-height:1.65;
 }
 
 .about-copy p+p{
-    margin-top:25px;
+    margin-top:26px;
 }
 
 .about-image{
     position:relative;
 
-    background:var(--cyan);
-
     padding:18px;
+
+    background:var(--sky);
+
+    border:var(--line) solid var(--yellow);
 }
 
 .about-image img{
+    width:100%;
     height:520px;
+
     object-fit:cover;
 }
 
 .about-label{
     position:absolute;
 
-    bottom:18px;
     left:18px;
+    bottom:18px;
 
-    padding:10px 15px;
+    padding:9px 14px;
 
     background:var(--yellow);
     color:var(--blue);
 
+    font-size:.78rem;
     font-weight:900;
+
     text-transform:uppercase;
+    letter-spacing:.04em;
 }
 
 
-/* =====================================================
+/* =========================================================
    RESEARCH
-===================================================== */
+========================================================= */
 
 #research{
-    background:var(--cyan);
+    padding:115px 0;
+
+    background:var(--sky);
     color:var(--blue);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--blue);
+}
+
+.research-symbol{
+    position:absolute;
+
+    width:520px;
+
+    left:-170px;
+    bottom:-190px;
+
+    opacity:.08;
+
+    pointer-events:none;
 }
 
 .research-grid{
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
 
-    border-top:3px solid var(--blue);
-    border-left:3px solid var(--blue);
+    border-top:var(--line) solid var(--blue);
+    border-left:var(--line) solid var(--blue);
 }
 
 .card{
-    min-height:300px;
+    min-height:315px;
 
     padding:35px;
-
-    border-right:3px solid var(--blue);
-    border-bottom:3px solid var(--blue);
 
     display:flex;
     flex-direction:column;
     justify-content:space-between;
 
-    transition:.25s;
+    border-right:var(--line) solid var(--blue);
+    border-bottom:var(--line) solid var(--blue);
+
+    transition:.2s;
 }
 
 .card:nth-child(2),
@@ -490,35 +520,53 @@ section:not(.hero){
 }
 
 .card-number{
+    font-size:.75rem;
     font-weight:900;
-    font-size:.9rem;
+
+    letter-spacing:.1em;
 }
 
 .card h3{
-    font-size:clamp(2rem,4vw,4rem);
+    margin:50px 0 25px;
 
-    line-height:.93;
-
-    letter-spacing:-.06em;
-
+    font-size:clamp(2.5rem,4.8vw,5.2rem);
     font-weight:900;
+
+    line-height:.86;
+    letter-spacing:-.07em;
 }
 
 .card p{
-    max-width:390px;
+    max-width:420px;
+
     font-weight:600;
 }
 
 
-/* =====================================================
-   PROJECT
-===================================================== */
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 #project{
+    padding:115px 0;
+
     background:var(--yellow);
     color:var(--blue);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--blue);
+}
+
+.project-symbol{
+    position:absolute;
+
+    width:440px;
+
+    right:-120px;
+    top:150px;
+
+    opacity:.06;
+
+    pointer-events:none;
 }
 
 .project-block{
@@ -526,9 +574,9 @@ section:not(.hero){
 
     grid-template-columns:38% 1fr;
 
-    margin-bottom:100px;
+    border:var(--line) solid var(--blue);
 
-    border:3px solid var(--blue);
+    margin-bottom:100px;
 }
 
 .project-block:last-child{
@@ -536,7 +584,7 @@ section:not(.hero){
 }
 
 .project-info{
-    padding:40px;
+    padding:38px;
 
     display:flex;
     flex-direction:column;
@@ -544,27 +592,33 @@ section:not(.hero){
 }
 
 .project-semester{
-    font-weight:900;
-    text-transform:uppercase;
-
     margin-bottom:30px;
+
+    font-size:.78rem;
+    font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.09em;
 }
 
 .project-info h3{
-    font-size:clamp(2.5rem,4vw,4.5rem);
-
-    line-height:.95;
-    letter-spacing:-.06em;
-
     margin-bottom:30px;
+
+    font-size:clamp(2.8rem,4.8vw,5.3rem);
+    font-weight:900;
+
+    line-height:.87;
+    letter-spacing:-.075em;
 }
 
 .project-info p{
+    max-width:480px;
+
     font-weight:600;
 }
 
 .project-list{
-    margin-top:30px;
+    margin-top:35px;
 
     list-style:none;
 
@@ -576,43 +630,57 @@ section:not(.hero){
 
     border-bottom:2px solid var(--blue);
 
-    font-weight:700;
+    font-size:.87rem;
+    font-weight:800;
 }
 
 .project-image{
-    background:var(--blue);
-
     padding:20px;
+
+    background:var(--blue);
 }
 
 .project-image img{
+    width:100%;
     height:100%;
-    min-height:570px;
+    min-height:600px;
 
     object-fit:cover;
 }
-
-
-/* alternate */
 
 .project-block.alt{
     background:var(--orange);
 }
 
 .project-block.alt .project-image{
-    background:var(--cyan);
+    background:var(--sky);
 }
 
 
-/* =====================================================
+/* =========================================================
    MEMBERS
-===================================================== */
+========================================================= */
 
 #members{
+    padding:115px 0;
+
     background:var(--orange);
     color:var(--blue);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--blue);
+}
+
+.member-symbol{
+    position:absolute;
+
+    width:480px;
+
+    right:-130px;
+    bottom:-160px;
+
+    opacity:.07;
+
+    pointer-events:none;
 }
 
 .member-grid{
@@ -620,17 +688,15 @@ section:not(.hero){
 
     grid-template-columns:repeat(4,1fr);
 
-    border-top:3px solid var(--blue);
-    border-left:3px solid var(--blue);
+    border-top:var(--line) solid var(--blue);
+    border-left:var(--line) solid var(--blue);
 }
 
 .member{
-    border-right:3px solid var(--blue);
-    border-bottom:3px solid var(--blue);
-
-    background:var(--orange);
-
     padding:20px;
+
+    border-right:var(--line) solid var(--blue);
+    border-bottom:var(--line) solid var(--blue);
 }
 
 .member:nth-child(even){
@@ -639,72 +705,93 @@ section:not(.hero){
 
 .member img{
     width:100%;
-
     aspect-ratio:1/1;
 
     object-fit:cover;
 
     filter:grayscale(100%);
 
-    margin-bottom:25px;
+    margin-bottom:24px;
 }
 
 .member h3{
-    font-size:1.6rem;
-
-    line-height:1;
-
-    letter-spacing:-.04em;
-
     margin-bottom:10px;
+
+    font-size:1.65rem;
+    font-weight:900;
+
+    line-height:.95;
+    letter-spacing:-.05em;
 }
 
 .member p{
-    font-size:.86rem;
+    font-size:.76rem;
     font-weight:800;
 
     text-transform:uppercase;
+    letter-spacing:.04em;
 }
 
 
-/* =====================================================
-   REPORT
-===================================================== */
+/* =========================================================
+   REPORTS
+========================================================= */
 
 #publications{
+    padding:115px 0;
+
     background:var(--blue);
     color:var(--yellow);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--yellow);
+}
+
+.report-symbol{
+    position:absolute;
+
+    width:470px;
+
+    left:-140px;
+    bottom:-180px;
+
+    opacity:.08;
+
+    pointer-events:none;
 }
 
 .pub-list{
-    border-top:3px solid var(--yellow);
+    border-top:var(--line) solid var(--yellow);
 }
 
 .pub-item{
     display:grid;
+
     grid-template-columns:120px 1fr auto;
 
     gap:30px;
 
-    padding:30px 0;
-
-    border-bottom:3px solid var(--yellow);
+    padding:32px 0;
 
     align-items:start;
+
+    border-bottom:var(--line) solid var(--yellow);
 }
 
 .pub-year{
-    font-size:1rem;
+    font-size:.76rem;
     font-weight:900;
+
+    text-transform:uppercase;
+    letter-spacing:.07em;
 }
 
 .pub-title{
-    font-size:1.5rem;
+    max-width:700px;
+
+    font-size:1.45rem;
     font-weight:800;
 
-    line-height:1.2;
+    line-height:1.3;
 }
 
 .pub-links{
@@ -713,14 +800,16 @@ section:not(.hero){
 }
 
 .pub-links a{
-    text-decoration:none;
+    padding:8px 12px;
 
     border:2px solid var(--yellow);
 
-    padding:8px 12px;
+    text-decoration:none;
 
+    font-size:.75rem;
     font-weight:900;
-    font-size:.8rem;
+
+    transition:.2s;
 }
 
 .pub-links a:hover{
@@ -729,27 +818,28 @@ section:not(.hero){
 }
 
 
-/* =====================================================
+/* =========================================================
    GALLERY
-===================================================== */
+========================================================= */
 
 #gallery{
-    background:var(--yellow);
+    padding:115px 0;
+
+    background:var(--sky);
     color:var(--blue);
 
-    padding:110px 0;
+    border-bottom:var(--line) solid var(--blue);
 }
 
 .gallery{
     display:grid;
 
     grid-template-columns:2fr 1fr;
-
     grid-template-rows:1fr 1fr;
 
-    height:760px;
+    gap:12px;
 
-    gap:10px;
+    height:760px;
 }
 
 .gallery img{
@@ -757,6 +847,8 @@ section:not(.hero){
     height:100%;
 
     object-fit:cover;
+
+    border:var(--line) solid var(--blue);
 }
 
 .gallery img:first-child{
@@ -764,94 +856,129 @@ section:not(.hero){
 }
 
 
-/* =====================================================
+/* =========================================================
    MANIFESTO
-===================================================== */
+========================================================= */
 
 .manifesto{
-    background:var(--cyan);
-    color:var(--blue);
+    min-height:620px;
 
-    padding:80px 4%;
+    padding:85px 4%;
 
     display:grid;
 
     grid-template-columns:1fr 1fr;
 
-    min-height:550px;
+    background:var(--yellow);
+    color:var(--blue);
+
+    border-bottom:var(--line) solid var(--blue);
+}
+
+.manifesto-left{
+    position:relative;
+    z-index:2;
+}
+
+.manifesto-symbol{
+    width:min(460px,65%);
+
+    margin-bottom:60px;
 }
 
 .manifesto-title{
-    font-size:clamp(4rem,8vw,9rem);
-
-    line-height:.77;
-
+    font-size:clamp(4.6rem,8vw,9rem);
     font-weight:900;
 
-    letter-spacing:-.08em;
+    line-height:.76;
+    letter-spacing:-.085em;
 }
 
 .manifesto-right{
     display:flex;
 
-    flex-direction:column;
+    align-items:flex-end;
     justify-content:flex-end;
 
-    font-size:clamp(2rem,4vw,4.5rem);
-
-    line-height:.95;
-
+    font-size:clamp(2.5rem,4.5vw,5rem);
     font-weight:900;
-    letter-spacing:-.06em;
+
+    line-height:.9;
+    letter-spacing:-.065em;
+
+    text-align:right;
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTACT
-===================================================== */
+========================================================= */
 
-.contact{
+#contact{
+    padding:110px 0 90px;
+
     background:var(--blue);
     color:var(--yellow);
-
-    padding:100px 0 80px;
 }
 
 .contact-layout{
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:.85fr 1.15fr;
 
     gap:100px;
 }
 
+.contact-brand{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.contact-logo{
+    width:230px;
+    height:auto;
+
+    margin-bottom:60px;
+}
+
 .contact-title{
-    font-size:clamp(4rem,8vw,9rem);
-
-    line-height:.8;
-
+    font-size:clamp(4.5rem,8vw,9rem);
     font-weight:900;
 
-    letter-spacing:-.08em;
+    line-height:.77;
+    letter-spacing:-.085em;
 }
 
 .contact-info{
-    border-top:3px solid var(--yellow);
+    margin-top:auto;
+
+    border-top:var(--line) solid var(--yellow);
 }
 
 .contact-row{
     display:grid;
 
-    grid-template-columns:120px 1fr;
+    grid-template-columns:130px 1fr;
+
+    gap:20px;
 
     padding:20px 0;
 
-    border-bottom:3px solid var(--yellow);
+    border-bottom:var(--line) solid var(--yellow);
 }
 
 .contact-row strong{
+    font-size:.75rem;
+    font-weight:900;
+
     text-transform:uppercase;
-    font-size:.8rem;
+    letter-spacing:.08em;
+}
+
+.contact-row span,
+.contact-row a{
+    font-weight:600;
 }
 
 .contact-row a{
@@ -859,33 +986,50 @@ section:not(.hero){
 }
 
 .contact-row a:hover{
-    color:white;
+    color:var(--white);
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer{
+    min-height:95px;
+
+    padding:22px 4%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+
     background:var(--orange);
     color:var(--blue);
 
-    padding:30px 4%;
+    border-top:var(--line) solid var(--blue);
+}
 
+.footer-logo{
+    width:135px;
+    height:auto;
+}
+
+.footer-text{
     display:flex;
-    justify-content:space-between;
+    gap:35px;
 
-    font-size:.8rem;
+    font-size:.72rem;
     font-weight:900;
 
     text-transform:uppercase;
+    letter-spacing:.05em;
 }
 
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:1000px){
 
@@ -898,13 +1042,18 @@ footer{
     }
 
     .hero-main{
-        min-height:75vh;
+        min-height:760px;
     }
 
     .hero-side{
-        min-height:300px;
+        min-height:460px;
+
         border-left:none;
-        border-top:3px solid var(--blue);
+        border-top:var(--line) solid var(--blue);
+    }
+
+    .hero-side-logo{
+        width:160px;
     }
 
     .section-header{
@@ -916,12 +1065,20 @@ footer{
         grid-template-columns:1fr;
     }
 
+    .about-copy{
+        max-width:800px;
+    }
+
     .research-grid{
         grid-template-columns:1fr;
     }
 
     .project-block{
         grid-template-columns:1fr;
+    }
+
+    .project-image img{
+        min-height:460px;
     }
 
     .member-grid{
@@ -934,6 +1091,7 @@ footer{
 
     .gallery{
         height:auto;
+
         grid-template-columns:1fr;
         grid-template-rows:auto;
     }
@@ -943,83 +1101,182 @@ footer{
     }
 
     .gallery img{
-        height:400px;
+        height:430px;
     }
 
     .manifesto{
         grid-template-columns:1fr;
-        gap:100px;
+        gap:120px;
+    }
+
+    .manifesto-right{
+        justify-content:flex-start;
+        text-align:left;
     }
 
     .contact-layout{
         grid-template-columns:1fr;
-        gap:70px;
+        gap:80px;
     }
+
 }
 
 
-@media(max-width:600px){
+/* =========================================================
+   MOBILE
+========================================================= */
 
-    .hero-main{
-        padding:120px 25px 40px;
+@media(max-width:650px){
+
+    .nav-container{
+        min-height:68px;
     }
 
-    .hero-side{
-        padding:50px 25px;
+    .logo img{
+        width:145px;
+    }
+
+    .hero{
+        padding-top:68px;
+    }
+
+    .hero-main{
+        min-height:680px;
+
+        padding:90px 24px 36px;
+    }
+
+    .hero-logo{
+        width:95%;
     }
 
     .hero-tagline{
+        margin-top:48px;
+    }
+
+    .hero-description{
+        font-size:.92rem;
+    }
+
+    .hero-symbol{
+        width:520px;
+
+        right:-230px;
+        bottom:-90px;
+    }
+
+    .hero-side{
+        min-height:400px;
+
+        padding:55px 24px 35px;
+    }
+
+    .hero-side-info{
         margin-top:60px;
     }
 
-    .member-grid{
-        grid-template-columns:1fr;
+    #about,
+    #research,
+    #project,
+    #members,
+    #publications,
+    #gallery{
+        padding:85px 0;
+    }
+
+    .about-image img{
+        height:340px;
+    }
+
+    .card{
+        min-height:270px;
+        padding:26px;
     }
 
     .project-info{
         padding:25px;
     }
 
+    .project-image{
+        padding:12px;
+    }
+
     .project-image img{
         min-height:300px;
     }
 
+    .member-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery img{
+        height:300px;
+    }
+
+    .manifesto{
+        min-height:580px;
+
+        padding:75px 24px;
+
+        gap:100px;
+    }
+
+    .manifesto-symbol{
+        width:180px;
+    }
+
+    #contact{
+        padding:90px 0 75px;
+    }
+
+    .contact-row{
+        grid-template-columns:1fr;
+        gap:7px;
+    }
+
     footer{
+        align-items:flex-start;
         flex-direction:column;
-        gap:10px;
+    }
+
+    .footer-text{
+        flex-direction:column;
+        gap:7px;
     }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
-NAVIGATION
-===================================================== -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <nav>
 
 <div class="nav-container">
 
-<a href="#" class="logo">
-   <img src="images/ELECOURSE_Wordmark_Blue_TL.svg">
+<a href="#top" class="logo">
+    <img
+        src="images/ELECOURSE_Wordmark_Yellow.svg"
+        alt="ELECOURSE"
+    >
 </a>
 
 <div class="nav-links">
 
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#project">Projects</a>
-<a href="#members">Members</a>
-<a href="#publications">Reports</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#project">Projects</a>
+    <a href="#members">Members</a>
+    <a href="#publications">Reports</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
 
 </div>
 
@@ -1029,100 +1286,132 @@ NAVIGATION
 
 
 
-<!-- =====================================================
-HERO
-===================================================== -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-<section class="hero">
+<section class="hero" id="top">
 
-  <div class="hero-main">
 
-    <div class="hero-brand">
+<div class="hero-main">
 
-      <h1>
-        ELE<br>
-        COURSE
-      </h1>
+<div class="hero-brand">
 
-      <div class="hero-tagline">
+    <img
+        src="images/ELECOURSE_TwoLine_Blue.svg"
+        alt="ELECOURSE"
+        class="hero-logo"
+    >
+
+    <div class="hero-tagline">
         Analyze.<br>
         Design.<br>
         Build.
-      </div>
-
     </div>
 
-    <div class="hero-bottom">
+    <p class="hero-description">
+        An interdisciplinary engineering community where students
+        share knowledge, explore technology, and build complete
+        engineering systems together.
+    </p>
 
-      <a href="#project" class="btn btn-primary">
+</div>
+
+
+<div class="hero-buttons">
+
+    <a href="#project" class="btn btn-primary">
         Explore Projects →
-      </a>
+    </a>
 
-      <a
+    <a
         href="https://github.com/elecourse2023"
         target="_blank"
+        rel="noopener noreferrer"
         class="btn btn-outline"
-      >
+    >
         GitHub ↗
-      </a>
+    </a>
 
-    </div>
+</div>
+
+
+<img
+    src="images/ELECOURSE_Symbol_Blue.svg"
+    alt=""
+    aria-hidden="true"
+    class="hero-symbol"
+>
+
+</div>
+
+
+
+<div class="hero-side">
+
+<div>
 
     <img
-      src="images/symbol.svg"
-      alt=""
-      class="hero-symbol"
-      aria-hidden="true"
+        src="images/ELECOURSE_Wordmark_Blue.svg"
+        alt="ELECOURSE"
+        class="hero-side-logo"
     >
 
-  </div>
-
-  <div class="hero-side">
-
-    <div class="hero-side-top">
-      Engineering<br>
-      Learning &<br>
-      Research<br>
-      Community
+    <div class="hero-side-title">
+        Engineering<br>
+        Learning &<br>
+        Research<br>
+        Community
     </div>
 
-    <div class="hero-side-info">
+</div>
 
-      <strong>
-        SEOUL · KOREA
-      </strong>
 
-      <p>
+<div class="hero-side-info">
+
+    <strong>
+        Seoul · Korea
+    </strong>
+
+    <p>
         We share a course.<br>
         We exchange ideas.<br>
         We build together.
-      </p>
+    </p>
 
-    </div>
+</div>
 
-  </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-ABOUT
-===================================================== -->
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section id="about">
 
-<div class="container">
+<img
+    src="images/ELECOURSE_Symbol_Yellow.svg"
+    alt=""
+    aria-hidden="true"
+    class="about-symbol"
+>
+
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-01 / ABOUT
-</div>
+    <div class="section-number">
+        01 / About
+    </div>
 
-<h2 class="section-title">
-A SHARED COURSE<br>
-OF ENGINEERING.
-</h2>
+    <h2 class="section-title">
+        A SHARED COURSE<br>
+        OF ENGINEERING.
+    </h2>
 
 </div>
 
@@ -1131,31 +1420,32 @@ OF ENGINEERING.
 
 <div class="about-copy">
 
-<p>
-ELECOURSE is a student-led engineering
-research community where students from
-different fields learn, design, and build
-engineering systems together.
-</p>
+    <p>
+        ELECOURSE is a student-led engineering research community
+        where students from different fields learn, design,
+        and build engineering systems together.
+    </p>
 
-<p>
-Every semester, members form interdisciplinary
-teams to develop complete engineering systems
-covering hardware, embedded systems,
-signal processing, FPGA, machine learning
-and experimental validation.
-</p>
+    <p>
+        Every semester, members form interdisciplinary teams
+        to develop complete engineering systems covering
+        hardware, embedded systems, signal processing,
+        FPGA, machine learning, and experimental validation.
+    </p>
 
 </div>
 
 
 <div class="about-image">
 
-<img src="images/team_photo.png" alt="ELECOURSE members">
+    <img
+        src="images/team_photo.png"
+        alt="ELECOURSE members"
+    >
 
-<div class="about-label">
-ELECOURSE / 2026
-</div>
+    <div class="about-label">
+        ELECOURSE / 2026
+    </div>
 
 </div>
 
@@ -1167,107 +1457,112 @@ ELECOURSE / 2026
 
 
 
-<!-- =====================================================
-RESEARCH
-===================================================== -->
+<!-- =========================================================
+     RESEARCH
+========================================================= -->
 
 <section id="research">
 
-<div class="container">
+<img
+    src="images/ELECOURSE_Symbol_Blue.svg"
+    alt=""
+    aria-hidden="true"
+    class="research-symbol"
+>
+
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-02 / RESEARCH
-</div>
+    <div class="section-number">
+        02 / Research
+    </div>
 
-<h2 class="section-title">
-WHAT WE<br>
-EXPLORE.
-</h2>
+    <h2 class="section-title">
+        WHAT WE<br>
+        EXPLORE.
+    </h2>
 
 </div>
 
 
 <div class="research-grid">
 
-
 <div class="card">
 
-<div class="card-number">
-01
-</div>
+    <div class="card-number">
+        01
+    </div>
 
-<h3>
-Signal<br>
-Processing
-</h3>
+    <h3>
+        Signal<br>
+        Processing
+    </h3>
 
-<p>
-Biosignal filtering, feature extraction,
-physiological signals and data analysis.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-number">
-02
-</div>
-
-<h3>
-Machine<br>
-Learning
-</h3>
-
-<p>
-Regression, classification,
-healthcare AI and predictive modeling.
-</p>
+    <p>
+        Biosignal filtering, feature extraction,
+        physiological signals, and data analysis.
+    </p>
 
 </div>
 
 
 <div class="card">
 
-<div class="card-number">
-03
-</div>
+    <div class="card-number">
+        02
+    </div>
 
-<h3>
-Embedded<br>
-Systems
-</h3>
+    <h3>
+        Machine<br>
+        Learning
+    </h3>
 
-<p>
-STM32, sensors, communication interfaces,
-real-time acquisition and embedded control.
-</p>
+    <p>
+        Regression, classification,
+        healthcare AI, and predictive modeling.
+    </p>
 
 </div>
 
 
 <div class="card">
 
-<div class="card-number">
-04
+    <div class="card-number">
+        03
+    </div>
+
+    <h3>
+        Embedded<br>
+        Systems
+    </h3>
+
+    <p>
+        STM32, sensors, communication interfaces,
+        real-time acquisition, and embedded control.
+    </p>
+
 </div>
 
-<h3>
-Circuit<br>
-Design
-</h3>
 
-<p>
-Analog and digital circuits,
-schematic design, simulation,
-measurement and validation.
-</p>
+<div class="card">
+
+    <div class="card-number">
+        04
+    </div>
+
+    <h3>
+        Circuit<br>
+        Design
+    </h3>
+
+    <p>
+        Analog and digital circuits,
+        schematic design, simulation,
+        measurement, and validation.
+    </p>
 
 </div>
-
 
 </div>
 
@@ -1277,31 +1572,38 @@ measurement and validation.
 
 
 
-<!-- =====================================================
-PROJECTS
-===================================================== -->
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
 <section id="project">
 
-<div class="container">
+<img
+    src="images/ELECOURSE_Symbol_Blue.svg"
+    alt=""
+    aria-hidden="true"
+    class="project-symbol"
+>
+
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-03 / PROJECTS
+    <div class="section-number">
+        03 / Projects
+    </div>
+
+    <h2 class="section-title">
+        ANALYZE.<br>
+        DESIGN.<br>
+        BUILD.
+    </h2>
+
 </div>
 
-<h2 class="section-title">
-ANALYZE.<br>
-DESIGN.<br>
-BUILD.
-</h2>
-
-</div>
 
 
-
-<!-- FALL -->
+<!-- 2026 FALL -->
 
 <div class="project-block">
 
@@ -1309,34 +1611,33 @@ BUILD.
 
 <div>
 
-<div class="project-semester">
-2026 / FALL
-</div>
+    <div class="project-semester">
+        2026 / Fall
+    </div>
 
-<h3>
-FPGA-Based<br>
-Battery<br>
-Management<br>
-System
-</h3>
+    <h3>
+        FPGA-Based<br>
+        Battery<br>
+        Management<br>
+        System
+    </h3>
 
-<p>
-An FPGA-based BMS platform that monitors
-lithium-ion battery conditions in real time
-and estimates SOC and SOH using STM32 and FPGA.
-</p>
+    <p>
+        An FPGA-based BMS platform that monitors lithium-ion
+        battery conditions in real time and estimates SOC and SOH
+        using STM32 and FPGA.
+    </p>
 
+    <ul class="project-list">
 
-<ul class="project-list">
+        <li>Hardware Design — AFE + STM32</li>
+        <li>FPGA Accelerator</li>
+        <li>Signal Processing Pipeline</li>
+        <li>SOC / SOH Estimation</li>
+        <li>Machine Learning Prediction</li>
+        <li>Performance Evaluation</li>
 
-<li>Hardware Design — AFE + STM32</li>
-<li>FPGA Accelerator</li>
-<li>Signal Processing Pipeline</li>
-<li>SOC / SOH Estimation</li>
-<li>Machine Learning Prediction</li>
-<li>Performance Evaluation</li>
-
-</ul>
+    </ul>
 
 </div>
 
@@ -1345,9 +1646,10 @@ and estimates SOC and SOH using STM32 and FPGA.
 
 <div class="project-image">
 
-<img
-src="images/project_bms.png"
-alt="FPGA based BMS project">
+    <img
+        src="images/project_bms.png"
+        alt="FPGA-based Battery Management System"
+    >
 
 </div>
 
@@ -1355,7 +1657,7 @@ alt="FPGA based BMS project">
 
 
 
-<!-- SPRING -->
+<!-- 2026 SPRING -->
 
 <div class="project-block alt">
 
@@ -1363,32 +1665,31 @@ alt="FPGA based BMS project">
 
 <div>
 
-<div class="project-semester">
-2026 / SPRING
-</div>
+    <div class="project-semester">
+        2026 / Spring
+    </div>
 
-<h3>
-Cuffless<br>
-Blood Pressure<br>
-Estimation
-</h3>
+    <h3>
+        Cuffless<br>
+        Blood Pressure<br>
+        Estimation
+    </h3>
 
-<p>
-An end-to-end blood pressure estimation
-system based on synchronized ECG and PPG signals.
-</p>
+    <p>
+        An end-to-end blood pressure estimation system
+        based on synchronized ECG and PPG signals.
+    </p>
 
+    <ul class="project-list">
 
-<ul class="project-list">
+        <li>STM32 + AD8232 + MAX30102</li>
+        <li>Signal Acquisition</li>
+        <li>Signal Processing</li>
+        <li>PAT / PTT Feature Extraction</li>
+        <li>Machine Learning Prediction</li>
+        <li>Validation</li>
 
-<li>STM32 + AD8232 + MAX30102</li>
-<li>Signal Acquisition</li>
-<li>Signal Processing</li>
-<li>PAT / PTT Feature Extraction</li>
-<li>Machine Learning Prediction</li>
-<li>Validation</li>
-
-</ul>
+    </ul>
 
 </div>
 
@@ -1397,14 +1698,14 @@ system based on synchronized ECG and PPG signals.
 
 <div class="project-image">
 
-<img
-src="images/project_bp.jpeg"
-alt="Blood pressure estimation project">
+    <img
+        src="images/project_bp.jpeg"
+        alt="Cuffless Blood Pressure Estimation Project"
+    >
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1412,94 +1713,111 @@ alt="Blood pressure estimation project">
 
 
 
-<!-- =====================================================
-MEMBERS
-===================================================== -->
+<!-- =========================================================
+     MEMBERS
+========================================================= -->
 
 <section id="members">
 
-<div class="container">
+<img
+    src="images/ELECOURSE_Symbol_Blue.svg"
+    alt=""
+    aria-hidden="true"
+    class="member-symbol"
+>
+
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-04 / MEMBERS
-</div>
+    <div class="section-number">
+        04 / Members
+    </div>
 
-<h2 class="section-title">
-PEOPLE MAKE<br>
-THE COURSE.
-</h2>
+    <h2 class="section-title">
+        PEOPLE MAKE<br>
+        THE COURSE.
+    </h2>
 
 </div>
 
 
 <div class="member-grid">
 
-
 <div class="member">
 
-<img src="images/member1.jpg" alt="Seonghyun Jung">
+    <img
+        src="images/member1.jpg"
+        alt="Seonghyun Jung"
+    >
 
-<h3>
-Seonghyun<br>
-Jung
-</h3>
+    <h3>
+        Seonghyun<br>
+        Jung
+    </h3>
 
-<p>
-Signal Processing Lead
-</p>
+    <p>
+        Signal Processing Lead
+    </p>
 
 </div>
 
 
 <div class="member">
 
-<img src="images/member2.jpg" alt="Siwoo Kim">
+    <img
+        src="images/member2.jpg"
+        alt="Siwoo Kim"
+    >
 
-<h3>
-Siwoo<br>
-Kim
-</h3>
+    <h3>
+        Siwoo<br>
+        Kim
+    </h3>
 
-<p>
-Machine Learning Lead
-</p>
-
-</div>
-
-
-<div class="member">
-
-<img src="images/member3.jpg" alt="Eunseol Lee">
-
-<h3>
-Eunseol<br>
-Lee
-</h3>
-
-<p>
-Hardware Lead
-</p>
+    <p>
+        Machine Learning Lead
+    </p>
 
 </div>
 
 
 <div class="member">
 
-<img src="images/member4.jpg" alt="Minje Kim">
+    <img
+        src="images/member3.jpg"
+        alt="Eunseol Lee"
+    >
 
-<h3>
-Minje<br>
-Kim
-</h3>
+    <h3>
+        Eunseol<br>
+        Lee
+    </h3>
 
-<p>
-Validation Lead
-</p>
+    <p>
+        Hardware Lead
+    </p>
 
 </div>
 
+
+<div class="member">
+
+    <img
+        src="images/member4.jpg"
+        alt="Minje Kim"
+    >
+
+    <h3>
+        Minje<br>
+        Kim
+    </h3>
+
+    <p>
+        Validation Lead
+    </p>
+
+</div>
 
 </div>
 
@@ -1509,24 +1827,31 @@ Validation Lead
 
 
 
-<!-- =====================================================
-REPORTS
-===================================================== -->
+<!-- =========================================================
+     REPORTS
+========================================================= -->
 
 <section id="publications">
 
-<div class="container">
+<img
+    src="images/ELECOURSE_Symbol_Yellow.svg"
+    alt=""
+    aria-hidden="true"
+    class="report-symbol"
+>
+
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-05 / REPORTS
-</div>
+    <div class="section-number">
+        05 / Reports
+    </div>
 
-<h2 class="section-title">
-DOCUMENT<br>
-WHAT WE BUILD.
-</h2>
+    <h2 class="section-title">
+        DOCUMENT<br>
+        WHAT WE BUILD.
+    </h2>
 
 </div>
 
@@ -1535,31 +1860,28 @@ WHAT WE BUILD.
 
 <div class="pub-item">
 
-<div class="pub-year">
-2026<br>
-SPRING
-</div>
+    <div class="pub-year">
+        2026<br>
+        Spring
+    </div>
 
-<div class="pub-title">
+    <div class="pub-title">
+        ELECOURSE 2026 Spring Project:<br>
+        End-to-End Cuffless Blood Pressure
+        Estimation Pipeline Design
+    </div>
 
-ELECOURSE 2026 Spring Project:<br>
-End-to-End Cuffless Blood Pressure
-Estimation Pipeline Design
+    <div class="pub-links">
 
-</div>
+        <a href="reports/BP_Project_Report_2026_eng.pdf">
+            ENG ↓
+        </a>
 
+        <a href="reports/BP_Project_Report_2026_kor.pdf">
+            KOR ↓
+        </a>
 
-<div class="pub-links">
-
-<a href="reports/BP_Project_Report_2026_eng.pdf">
-ENG ↓
-</a>
-
-<a href="reports/BP_Project_Report_2026_kor.pdf">
-KOR ↓
-</a>
-
-</div>
+    </div>
 
 </div>
 
@@ -1571,42 +1893,45 @@ KOR ↓
 
 
 
-<!-- =====================================================
-GALLERY
-===================================================== -->
+<!-- =========================================================
+     GALLERY
+========================================================= -->
 
 <section id="gallery">
 
-<div class="container">
+<div class="container section-inner">
 
 <div class="section-header">
 
-<div class="section-number">
-06 / GALLERY
-</div>
+    <div class="section-number">
+        06 / Gallery
+    </div>
 
-<h2 class="section-title">
-PROCESS.<br>
-PEOPLE.<br>
-RESULTS.
-</h2>
+    <h2 class="section-title">
+        PROCESS.<br>
+        PEOPLE.<br>
+        RESULTS.
+    </h2>
 
 </div>
 
 
 <div class="gallery">
 
-<img
-src="images/hardware.png"
-alt="ELECOURSE hardware">
+    <img
+        src="images/hardware.png"
+        alt="ELECOURSE hardware"
+    >
 
-<img
-src="images/signal_processing.png"
-alt="Signal Processing">
+    <img
+        src="images/signal_processing.png"
+        alt="Signal Processing"
+    >
 
-<img
-src="images/dashboard.png"
-alt="Dashboard">
+    <img
+        src="images/dashboard.png"
+        alt="Dashboard"
+    >
 
 </div>
 
@@ -1616,34 +1941,41 @@ alt="Dashboard">
 
 
 
-<!-- =====================================================
-MANIFESTO
-===================================================== -->
+<!-- =========================================================
+     MANIFESTO
+========================================================= -->
 
 <section class="manifesto">
 
-<div class="manifesto-title">
+<div class="manifesto-left">
 
-ENGINEERS<br>
-CONNECT.
+    <img
+        src="images/ELECOURSE_Symbol_Blue.svg"
+        alt=""
+        aria-hidden="true"
+        class="manifesto-symbol"
+    >
+
+    <div class="manifesto-title">
+        ENGINEERS<br>
+        CONNECT.
+    </div>
 
 </div>
 
 
 <div class="manifesto-right">
 
-<div>
+    <div>
+        IDEAS<br>
+        FLOW.<br><br>
 
-IDEAS<br>
-FLOW.<br><br>
+        WE SHARE<br>
+        A COURSE.<br><br>
 
-WE SHARE<br>
-A COURSE.<br><br>
-
-WE BUILD<br>
-TOGETHER.
-
-</div>
+        WE BUILD<br>
+        TOGETHER.
+    </div>
 
 </div>
 
@@ -1651,21 +1983,33 @@ TOGETHER.
 
 
 
-<!-- =====================================================
-CONTACT
-===================================================== -->
+<!-- =========================================================
+     CONTACT
+========================================================= -->
 
-<section id="contact" class="contact">
+<section id="contact">
 
 <div class="container">
 
 <div class="contact-layout">
 
 
-<div class="contact-title">
+<div class="contact-brand">
 
-LET'S<br>
-CONNECT.
+<div>
+
+    <img
+        src="images/ELECOURSE_TwoLine_Yellow.svg"
+        alt="ELECOURSE"
+        class="contact-logo"
+    >
+
+    <div class="contact-title">
+        LET'S<br>
+        CONNECT.
+    </div>
+
+</div>
 
 </div>
 
@@ -1675,55 +2019,69 @@ CONNECT.
 
 <div class="contact-row">
 
-<strong>
-GitHub
-</strong>
+    <strong>
+        GitHub
+    </strong>
 
-<a href="https://github.com/elecourse2023"
-target="_blank">
-
-github.com/elecourse2023 ↗
-
-</a>
-
-</div>
-
-
-<div class="contact-row">
-
-<strong>
-Email
-</strong>
-
-<span>
-elecourse2023@gmail.com
-</span>
+    <a
+        href="https://github.com/elecourse2023"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        github.com/elecourse2023 ↗
+    </a>
 
 </div>
 
 
 <div class="contact-row">
 
-<strong>
-Instagram
-</strong>
+    <strong>
+        Email
+    </strong>
 
-<span>
-@ele_course
-</span>
+    <span>
+        elecourse2023@gmail.com
+    </span>
 
 </div>
 
 
 <div class="contact-row">
 
-<strong>
-Community
-</strong>
+    <strong>
+        Instagram
+    </strong>
 
-<span>
-Engineering Learning & Research Community
-</span>
+    <span>
+        @ele_course
+    </span>
+
+</div>
+
+
+<div class="contact-row">
+
+    <strong>
+        Community
+    </strong>
+
+    <span>
+        Engineering Learning & Research Community
+    </span>
+
+</div>
+
+
+<div class="contact-row">
+
+    <strong>
+        Location
+    </strong>
+
+    <span>
+        Seoul, Republic of Korea
+    </span>
 
 </div>
 
@@ -1738,19 +2096,29 @@ Engineering Learning & Research Community
 
 
 
-<!-- =====================================================
-FOOTER
-===================================================== -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
-<span>
-© 2026 ELECOURSE
-</span>
+<img
+    src="images/ELECOURSE_Wordmark_Blue.svg"
+    alt="ELECOURSE"
+    class="footer-logo"
+>
 
-<span>
-ANALYZE. DESIGN. BUILD.
-</span>
+<div class="footer-text">
+
+    <span>
+        © 2026 ELECOURSE
+    </span>
+
+    <span>
+        Analyze. Design. Build.
+    </span>
+
+</div>
 
 </footer>
 
