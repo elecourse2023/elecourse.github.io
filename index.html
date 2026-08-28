@@ -5,294 +5,1026 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ELECOURSE</title>
+<title>ELECOURSE — Analyze. Design. Build.</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
+/* =====================================================
+   ELECOURSE BRAND SYSTEM
+===================================================== */
+
+:root {
+
+  /* =========================
+     ELECOURSE CORE COLORS
+  ========================== */
+
+  --blue: #387ADF;
+  --sky: #71C1EA;
+  --orange: #EFAC4E;
+  --yellow: #FAEA6B;
+
+
+  /* =========================
+     BLUE SCALE
+  ========================== */
+
+  --blue-dark: #2457A6;
+  --blue-light: #76A5EA;
+  --blue-pale: #DCE9FB;
+
+
+  /* =========================
+     SKY SCALE
+  ========================== */
+
+  --sky-dark: #3C98C7;
+  --sky-light: #A8D9F2;
+  --sky-pale: #E3F4FC;
+
+
+  /* =========================
+     ORANGE SCALE
+  ========================== */
+
+  --orange-dark: #C77D20;
+  --orange-light: #F5CB8F;
+  --orange-pale: #FBEBD4;
+
+
+  /* =========================
+     YELLOW SCALE
+  ========================== */
+
+  --yellow-dark: #C9B739;
+  --yellow-light: #FCF2A0;
+  --yellow-pale: #FEF9D9;
+
+
+  /* =========================
+     NEUTRALS
+  ========================== */
+
+  --ink: #172033;
+  --muted: #596477;
+  --off-white: #F8F8F3;
+  --white: #FFFFFF;
+
+}
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-background:#f8fafc;
-color:#1e293b;
-line-height:1.7;
+    font-family:'Inter',sans-serif;
+    color:var(--black);
+    background:var(--white);
+    line-height:1.6;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+a{
+    color:inherit;
 }
 
 .container{
-width:90%;
-max-width:1200px;
-margin:auto;
+    width:min(1400px,92%);
+    margin:auto;
 }
 
-section{
-padding:80px 0;
-}
 
-h1,h2,h3{
-margin-bottom:20px;
-}
-
-.section-title{
-font-size:2rem;
-font-weight:700;
-margin-bottom:40px;
-border-left:5px solid #2563eb;
-padding-left:15px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(
-rgba(0,0,0,0.55),
-rgba(0,0,0,0.55)
-),
-url('images/team_photo.png');
-
-background-size:cover;
-background-position:center;
-
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-}
-
-.hero h1{
-font-size:4rem;
-margin-bottom:20px;
-}
-
-.hero p{
-font-size:1.2rem;
-max-width:800px;
-margin:auto;
-}
-
-.hero-buttons{
-margin-top:30px;
-}
-
-.btn{
-display:inline-block;
-padding:14px 28px;
-margin:10px;
-border-radius:8px;
-text-decoration:none;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn-primary{
-background:#2563eb;
-color:white;
-}
-
-.btn-primary:hover{
-background:#1d4ed8;
-}
-
-.btn-outline{
-border:2px solid white;
-color:white;
-}
-
-.btn-outline:hover{
-background:white;
-color:black;
-}
-
-/* ================= NAV ================= */
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.08);
-z-index:999;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    background:var(--blue);
+    color:var(--yellow);
+
+    border-bottom:var(--border) solid var(--yellow);
 }
 
 .nav-container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 50px;
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 4%;
 }
 
 .logo{
-font-size:1.4rem;
-font-weight:700;
+    font-size:1.65rem;
+    font-weight:900;
+    letter-spacing:-0.06em;
 }
 
-.nav-links a{
-margin-left:20px;
-text-decoration:none;
-color:#334155;
-font-weight:500;
-}
-
-/* ================= ABOUT ================= */
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
-}
-
-.about-grid img{
-width:100%;
-border-radius:12px;
-}
-
-/* ================= RESEARCH ================= */
-
-.research-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 4px 20px rgba(0,0,0,0.06);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-/* ================= PROJECT ================= */
-
-.project{
-background:white;
-}
-
-.project img{
-width:100%;
-border-radius:10px;
-margin-top:20px;
-}
-
-/* ================= MEMBERS ================= */
-
-.member-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-}
-
-.member{
-background:white;
-padding:20px;
-text-align:center;
-border-radius:12px;
-box-shadow:0 4px 20px rgba(0,0,0,0.06);
-}
-
-.member img{
-width:160px;
-height:160px;
-object-fit:cover;
-border-radius:50%;
-margin-bottom:15px;
-}
-
-/* ================= PUBLICATIONS ================= */
-
-.pub-list{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 4px 20px rgba(0,0,0,0.06);
-}
-
-.pub-item{
-margin-bottom:20px;
-}
-
-/* ================= GALLERY ================= */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-border-radius:12px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-background:#0f172a;
-color:white;
-text-align:center;
-}
-
-.contact a{
-color:#60a5fa;
-text-decoration:none;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-background:#020617;
-color:#94a3b8;
-text-align:center;
-padding:20px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-.hero h1{
-font-size:2.5rem;
-}
-
-.about-grid{
-grid-template-columns:1fr;
+.logo span{
+    color:white;
 }
 
 .nav-links{
-display:none;
+    display:flex;
+    align-items:center;
 }
+
+.nav-links a{
+    text-decoration:none;
+    margin-left:28px;
+
+    font-size:.86rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.02em;
+
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:white;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+    padding-top:72px;
+
+    display:grid;
+    grid-template-columns:1fr 34%;
+
+    background:var(--yellow);
+}
+
+
+/* LEFT HERO */
+
+.hero-main{
+    position:relative;
+    overflow:hidden;
+
+    padding:7vw 5vw 5vw;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.hero-brand{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    color:var(--blue);
+
+    font-size:clamp(5rem,13vw,13rem);
+    line-height:.75;
+
+    font-weight:900;
+    letter-spacing:-.09em;
+
+    margin-left:-.04em;
+}
+
+.hero-tagline{
+    margin-top:80px;
+
+    color:var(--blue);
+
+    font-weight:900;
+    font-size:clamp(2.5rem,5vw,5.5rem);
+
+    letter-spacing:-.06em;
+    line-height:.92;
+}
+
+.hero-bottom{
+    margin-top:70px;
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+
+    position:relative;
+    z-index:5;
+}
+
+
+/* GRAPHIC SHAPE */
+
+.hero-shape{
+    position:absolute;
+
+    width:55vw;
+    height:55vw;
+
+    right:-10%;
+    bottom:-23%;
+
+    background:var(--blue);
+
+    border-radius:55% 45% 60% 40% / 60% 40% 55% 45%;
+
+    transform:rotate(-12deg);
+}
+
+.hero-shape::after{
+    content:"";
+
+    position:absolute;
+
+    width:45%;
+    height:40%;
+
+    left:22%;
+    top:33%;
+
+    background:var(--yellow);
+
+    border-radius:50%;
+
+    transform:rotate(10deg);
+}
+
+
+/* RIGHT HERO */
+
+.hero-side{
+    background:var(--orange);
+
+    padding:7vw 3vw 4vw;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    border-left:var(--border) solid var(--blue);
+}
+
+.hero-side-top{
+    font-size:clamp(1.7rem,3vw,3.5rem);
+
+    font-weight:900;
+    color:var(--yellow);
+
+    line-height:1.05;
+    letter-spacing:-.05em;
+}
+
+.hero-side-info{
+    color:var(--yellow);
+}
+
+.hero-side-info strong{
+    display:block;
+
+    font-size:1.1rem;
+    margin-bottom:15px;
+}
+
+.hero-side-info p{
+    max-width:300px;
+    font-weight:600;
+}
+
+
+/* BUTTON */
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+
+    padding:14px 22px;
+
+    border:3px solid var(--blue);
+
+    text-decoration:none;
+
+    font-size:.88rem;
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    transition:.2s;
+
+    border-radius:0;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:var(--yellow);
+}
+
+.btn-primary:hover{
+    background:var(--cyan);
+    color:var(--blue);
+}
+
+.btn-outline{
+    background:var(--yellow);
+    color:var(--blue);
+}
+
+.btn-outline:hover{
+    background:var(--blue);
+    color:var(--yellow);
+}
+
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+section:not(.hero){
+    border-bottom:var(--border) solid var(--blue);
+}
+
+.section-header{
+    display:grid;
+
+    grid-template-columns:220px 1fr;
+
+    border-bottom:3px solid currentColor;
+
+    padding-bottom:20px;
+    margin-bottom:50px;
+}
+
+.section-number{
+    font-weight:900;
+    font-size:1rem;
+}
+
+.section-title{
+    font-weight:900;
+
+    font-size:clamp(2.8rem,6vw,6rem);
+
+    line-height:.9;
+
+    letter-spacing:-.07em;
+}
+
+.section-intro{
+    font-size:1.05rem;
+    max-width:750px;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+#about{
+    background:var(--blue);
+    color:var(--yellow);
+
+    padding:110px 0;
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1.15fr;
+
+    gap:50px;
+    align-items:end;
+}
+
+.about-copy{
+    font-size:1.4rem;
+    font-weight:600;
+
+    max-width:580px;
+}
+
+.about-copy p+p{
+    margin-top:25px;
+}
+
+.about-image{
+    position:relative;
+
+    background:var(--cyan);
+
+    padding:18px;
+}
+
+.about-image img{
+    height:520px;
+    object-fit:cover;
+}
+
+.about-label{
+    position:absolute;
+
+    bottom:18px;
+    left:18px;
+
+    padding:10px 15px;
+
+    background:var(--yellow);
+    color:var(--blue);
+
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+
+/* =====================================================
+   RESEARCH
+===================================================== */
+
+#research{
+    background:var(--cyan);
+    color:var(--blue);
+
+    padding:110px 0;
+}
+
+.research-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    border-top:3px solid var(--blue);
+    border-left:3px solid var(--blue);
+}
+
+.card{
+    min-height:300px;
+
+    padding:35px;
+
+    border-right:3px solid var(--blue);
+    border-bottom:3px solid var(--blue);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    transition:.25s;
+}
+
+.card:nth-child(2),
+.card:nth-child(3){
+    background:var(--yellow);
+}
+
+.card:hover{
+    background:var(--orange);
+}
+
+.card-number{
+    font-weight:900;
+    font-size:.9rem;
+}
+
+.card h3{
+    font-size:clamp(2rem,4vw,4rem);
+
+    line-height:.93;
+
+    letter-spacing:-.06em;
+
+    font-weight:900;
+}
+
+.card p{
+    max-width:390px;
+    font-weight:600;
+}
+
+
+/* =====================================================
+   PROJECT
+===================================================== */
+
+#project{
+    background:var(--yellow);
+    color:var(--blue);
+
+    padding:110px 0;
+}
+
+.project-block{
+    display:grid;
+
+    grid-template-columns:38% 1fr;
+
+    margin-bottom:100px;
+
+    border:3px solid var(--blue);
+}
+
+.project-block:last-child{
+    margin-bottom:0;
+}
+
+.project-info{
+    padding:40px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.project-semester{
+    font-weight:900;
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+.project-info h3{
+    font-size:clamp(2.5rem,4vw,4.5rem);
+
+    line-height:.95;
+    letter-spacing:-.06em;
+
+    margin-bottom:30px;
+}
+
+.project-info p{
+    font-weight:600;
+}
+
+.project-list{
+    margin-top:30px;
+
+    list-style:none;
+
+    border-top:2px solid var(--blue);
+}
+
+.project-list li{
+    padding:10px 0;
+
+    border-bottom:2px solid var(--blue);
+
+    font-weight:700;
+}
+
+.project-image{
+    background:var(--blue);
+
+    padding:20px;
+}
+
+.project-image img{
+    height:100%;
+    min-height:570px;
+
+    object-fit:cover;
+}
+
+
+/* alternate */
+
+.project-block.alt{
+    background:var(--orange);
+}
+
+.project-block.alt .project-image{
+    background:var(--cyan);
+}
+
+
+/* =====================================================
+   MEMBERS
+===================================================== */
+
+#members{
+    background:var(--orange);
+    color:var(--blue);
+
+    padding:110px 0;
+}
+
+.member-grid{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    border-top:3px solid var(--blue);
+    border-left:3px solid var(--blue);
+}
+
+.member{
+    border-right:3px solid var(--blue);
+    border-bottom:3px solid var(--blue);
+
+    background:var(--orange);
+
+    padding:20px;
+}
+
+.member:nth-child(even){
+    background:var(--yellow);
+}
+
+.member img{
+    width:100%;
+
+    aspect-ratio:1/1;
+
+    object-fit:cover;
+
+    filter:grayscale(100%);
+
+    margin-bottom:25px;
+}
+
+.member h3{
+    font-size:1.6rem;
+
+    line-height:1;
+
+    letter-spacing:-.04em;
+
+    margin-bottom:10px;
+}
+
+.member p{
+    font-size:.86rem;
+    font-weight:800;
+
+    text-transform:uppercase;
+}
+
+
+/* =====================================================
+   REPORT
+===================================================== */
+
+#publications{
+    background:var(--blue);
+    color:var(--yellow);
+
+    padding:110px 0;
+}
+
+.pub-list{
+    border-top:3px solid var(--yellow);
+}
+
+.pub-item{
+    display:grid;
+    grid-template-columns:120px 1fr auto;
+
+    gap:30px;
+
+    padding:30px 0;
+
+    border-bottom:3px solid var(--yellow);
+
+    align-items:start;
+}
+
+.pub-year{
+    font-size:1rem;
+    font-weight:900;
+}
+
+.pub-title{
+    font-size:1.5rem;
+    font-weight:800;
+
+    line-height:1.2;
+}
+
+.pub-links{
+    display:flex;
+    gap:10px;
+}
+
+.pub-links a{
+    text-decoration:none;
+
+    border:2px solid var(--yellow);
+
+    padding:8px 12px;
+
+    font-weight:900;
+    font-size:.8rem;
+}
+
+.pub-links a:hover{
+    background:var(--yellow);
+    color:var(--blue);
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+#gallery{
+    background:var(--yellow);
+    color:var(--blue);
+
+    padding:110px 0;
+}
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    grid-template-rows:1fr 1fr;
+
+    height:760px;
+
+    gap:10px;
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.gallery img:first-child{
+    grid-row:1 / 3;
+}
+
+
+/* =====================================================
+   MANIFESTO
+===================================================== */
+
+.manifesto{
+    background:var(--cyan);
+    color:var(--blue);
+
+    padding:80px 4%;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    min-height:550px;
+}
+
+.manifesto-title{
+    font-size:clamp(4rem,8vw,9rem);
+
+    line-height:.77;
+
+    font-weight:900;
+
+    letter-spacing:-.08em;
+}
+
+.manifesto-right{
+    display:flex;
+
+    flex-direction:column;
+    justify-content:flex-end;
+
+    font-size:clamp(2rem,4vw,4.5rem);
+
+    line-height:.95;
+
+    font-weight:900;
+    letter-spacing:-.06em;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact{
+    background:var(--blue);
+    color:var(--yellow);
+
+    padding:100px 0 80px;
+}
+
+.contact-layout{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:100px;
+}
+
+.contact-title{
+    font-size:clamp(4rem,8vw,9rem);
+
+    line-height:.8;
+
+    font-weight:900;
+
+    letter-spacing:-.08em;
+}
+
+.contact-info{
+    border-top:3px solid var(--yellow);
+}
+
+.contact-row{
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    padding:20px 0;
+
+    border-bottom:3px solid var(--yellow);
+}
+
+.contact-row strong{
+    text-transform:uppercase;
+    font-size:.8rem;
+}
+
+.contact-row a{
+    text-decoration:none;
+}
+
+.contact-row a:hover{
+    color:white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:var(--orange);
+    color:var(--blue);
+
+    padding:30px 4%;
+
+    display:flex;
+    justify-content:space-between;
+
+    font-size:.8rem;
+    font-weight:900;
+
+    text-transform:uppercase;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+    }
+
+    .hero-main{
+        min-height:75vh;
+    }
+
+    .hero-side{
+        min-height:300px;
+        border-left:none;
+        border-top:3px solid var(--blue);
+    }
+
+    .section-header{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .research-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-block{
+        grid-template-columns:1fr;
+    }
+
+    .member-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .pub-item{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        height:auto;
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+
+    .gallery img:first-child{
+        grid-row:auto;
+    }
+
+    .gallery img{
+        height:400px;
+    }
+
+    .manifesto{
+        grid-template-columns:1fr;
+        gap:100px;
+    }
+
+    .contact-layout{
+        grid-template-columns:1fr;
+        gap:70px;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .hero-main{
+        padding:120px 25px 40px;
+    }
+
+    .hero-side{
+        padding:50px 25px;
+    }
+
+    .hero-tagline{
+        margin-top:60px;
+    }
+
+    .member-grid{
+        grid-template-columns:1fr;
+    }
+
+    .project-info{
+        padding:25px;
+    }
+
+    .project-image img{
+        min-height:300px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<!-- ================= NAV ================= -->
+
+<!-- =====================================================
+NAVIGATION
+===================================================== -->
 
 <nav>
 
 <div class="nav-container">
 
 <div class="logo">
-ELECOURSE
+ELE<span>COURSE</span>
 </div>
 
 <div class="nav-links">
+
 <a href="#about">About</a>
 <a href="#research">Research</a>
 <a href="#project">Projects</a>
@@ -300,37 +1032,77 @@ ELECOURSE
 <a href="#publications">Reports</a>
 <a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
+
 </div>
 
 </div>
 
 </nav>
 
-<!-- ================= HERO ================= -->
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
 
 <section class="hero">
 
-<div>
+<div class="hero-main">
 
-<h1>ELECOURSE</h1>
+<div class="hero-brand">
 
-<p>
-Interdisciplinary Engineering Research Community
-focusing on Circuit Design,
-Machine Learning, Embedded Systems,
-and Applied Technologies.
-</p>
+<h1>
+ELE<br>
+COURSE
+</h1>
 
-<div class="hero-buttons">
+<div class="hero-tagline">
+Analyze.<br>
+Design.<br>
+Build.
+</div>
+
+</div>
+
+<div class="hero-bottom">
 
 <a href="#project" class="btn btn-primary">
-Current Project
+Explore Projects →
 </a>
 
-<a href="https://github.com/YOUR_GITHUB"
+<a href="https://github.com/elecourse2023"
+target="_blank"
 class="btn btn-outline">
-GitHub
+GitHub ↗
 </a>
+
+</div>
+
+<div class="hero-shape"></div>
+
+</div>
+
+
+<div class="hero-side">
+
+<div class="hero-side-top">
+Engineering<br>
+Learning &<br>
+Research<br>
+Community
+</div>
+
+<div class="hero-side-info">
+
+<strong>
+SEOUL · KOREA
+</strong>
+
+<p>
+We share a course.<br>
+We exchange ideas.<br>
+We build together.
+</p>
 
 </div>
 
@@ -338,43 +1110,61 @@ GitHub
 
 </section>
 
-<!-- ================= ABOUT ================= -->
+
+
+<!-- =====================================================
+ABOUT
+===================================================== -->
 
 <section id="about">
 
 <div class="container">
 
+<div class="section-header">
+
+<div class="section-number">
+01 / ABOUT
+</div>
+
 <h2 class="section-title">
-About ELECOURSE
+A SHARED COURSE<br>
+OF ENGINEERING.
 </h2>
+
+</div>
+
 
 <div class="about-grid">
 
-<div>
+<div class="about-copy">
 
 <p>
-
-ELECOURSE is a student-led engineering research group
-that conducts semester-long collaborative projects
-across circuit design, signal processing,
-embedded systems, machine learning,
-and applied technologies.
-
+ELECOURSE is a student-led engineering
+research community where students from
+different fields learn, design, and build
+engineering systems together.
 </p>
 
-<br>
-
 <p>
-
-Every semester, members form interdisciplinary teams
-to design, implement, and validate a complete engineering system,
-from hardware development to algorithm design and experimental evaluation.
-
+Every semester, members form interdisciplinary
+teams to develop complete engineering systems
+covering hardware, embedded systems,
+signal processing, FPGA, machine learning
+and experimental validation.
 </p>
 
 </div>
 
-<img src="images/team_photo.png">
+
+<div class="about-image">
+
+<img src="images/team_photo.png" alt="ELECOURSE members">
+
+<div class="about-label">
+ELECOURSE / 2026
+</div>
+
+</div>
 
 </div>
 
@@ -382,51 +1172,109 @@ from hardware development to algorithm design and experimental evaluation.
 
 </section>
 
-<!-- ================= RESEARCH ================= -->
+
+
+<!-- =====================================================
+RESEARCH
+===================================================== -->
 
 <section id="research">
 
 <div class="container">
 
+<div class="section-header">
+
+<div class="section-number">
+02 / RESEARCH
+</div>
+
 <h2 class="section-title">
-Research Areas
+WHAT WE<br>
+EXPLORE.
 </h2>
+
+</div>
+
 
 <div class="research-grid">
 
-<div class="card">
-<h3>Signal Processing</h3>
-<p>
-Biosignal filtering,
-feature extraction and physiological analysis.
-</p>
-</div>
 
 <div class="card">
-<h3>Machine Learning</h3>
+
+<div class="card-number">
+01
+</div>
+
+<h3>
+Signal<br>
+Processing
+</h3>
+
+<p>
+Biosignal filtering, feature extraction,
+physiological signals and data analysis.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-number">
+02
+</div>
+
+<h3>
+Machine<br>
+Learning
+</h3>
+
 <p>
 Regression, classification,
-healthcare AI,
-and predictive modeling.
+healthcare AI and predictive modeling.
 </p>
+
 </div>
 
-<div class="card">
-<h3>Embedded Systems</h3>
-<p>
-STM32,
-sensor integration,
-real-time acquisition systems,
-wearable devices.
-</p>
-</div>
 
 <div class="card">
-<h3>Circuit Design</h3>
-<p>
-Analog design, digital design, schematic capture and simulation.
-</p>
+
+<div class="card-number">
+03
 </div>
+
+<h3>
+Embedded<br>
+Systems
+</h3>
+
+<p>
+STM32, sensors, communication interfaces,
+real-time acquisition and embedded control.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-number">
+04
+</div>
+
+<h3>
+Circuit<br>
+Design
+</h3>
+
+<p>
+Analog and digital circuits,
+schematic design, simulation,
+measurement and validation.
+</p>
+
+</div>
+
 
 </div>
 
@@ -434,113 +1282,231 @@ Analog design, digital design, schematic capture and simulation.
 
 </section>
 
-<!-- ================= PROJECT ================= -->
 
-<section id="project" class="project">
+
+<!-- =====================================================
+PROJECTS
+===================================================== -->
+
+<section id="project">
 
 <div class="container">
 
-  <h2 class="section-title">
-2026 Fall Project
+<div class="section-header">
+
+<div class="section-number">
+03 / PROJECTS
+</div>
+
+<h2 class="section-title">
+ANALYZE.<br>
+DESIGN.<br>
+BUILD.
 </h2>
-
-<h3>
-FPGA-Based Battery Management System
-</h3>
-
-<p>
-
-An FPGA-based BMS project that monitors lithium-ion battery conditions in real time and estimates SOC/SOH using STM32 and FPGA.
-
-The framework includes:
-
-</p>
-
-<ul style="margin-left:25px;margin-top:15px;">
-<li>Hardware Design (AFE + STM32)</li>
-<li>FPGA Accelerator</li>
-<li>Signal Processing Pipeline</li>
-<li>SOC/SOH Estimation Algorithm</li>
-<li>Machine Learning Prediction</li>
-<li>Validation and Performance Evaluation</li>
-</ul>
-
-<img src="images/project_bms.png">
 
 </div>
-  <div class="container">
-  
-<h2 class="section-title">
-2026 Spring Project
-</h2>
+
+
+
+<!-- FALL -->
+
+<div class="project-block">
+
+<div class="project-info">
+
+<div>
+
+<div class="project-semester">
+2026 / FALL
+</div>
 
 <h3>
-End-to-End Cuffless Blood Pressure Estimation Pipeline
+FPGA-Based<br>
+Battery<br>
+Management<br>
+System
 </h3>
 
 <p>
-
-This project developed a complete cuffless blood pressure
-estimation system based on synchronized ECG and PPG signals.
-
-The framework includes:
-
+An FPGA-based BMS platform that monitors
+lithium-ion battery conditions in real time
+and estimates SOC and SOH using STM32 and FPGA.
 </p>
 
-<ul style="margin-left:25px;margin-top:15px;">
-<li>Hardware Design (STM32 + AD8232 + MAX30102)</li>
-<li>Signal Acquisition</li>
+
+<ul class="project-list">
+
+<li>Hardware Design — AFE + STM32</li>
+<li>FPGA Accelerator</li>
 <li>Signal Processing Pipeline</li>
-<li>PAT/PTT Feature Extraction</li>
+<li>SOC / SOH Estimation</li>
 <li>Machine Learning Prediction</li>
-<li>Validation and Performance Evaluation</li>
+<li>Performance Evaluation</li>
+
 </ul>
 
-<img src="images/project_bp.jpeg">
+</div>
+
+</div>
+
+
+<div class="project-image">
+
+<img
+src="images/project_bms.png"
+alt="FPGA based BMS project">
+
+</div>
+
+</div>
 
 
 
+<!-- SPRING -->
 
-  
+<div class="project-block alt">
+
+<div class="project-info">
+
+<div>
+
+<div class="project-semester">
+2026 / SPRING
+</div>
+
+<h3>
+Cuffless<br>
+Blood Pressure<br>
+Estimation
+</h3>
+
+<p>
+An end-to-end blood pressure estimation
+system based on synchronized ECG and PPG signals.
+</p>
+
+
+<ul class="project-list">
+
+<li>STM32 + AD8232 + MAX30102</li>
+<li>Signal Acquisition</li>
+<li>Signal Processing</li>
+<li>PAT / PTT Feature Extraction</li>
+<li>Machine Learning Prediction</li>
+<li>Validation</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="project-image">
+
+<img
+src="images/project_bp.jpeg"
+alt="Blood pressure estimation project">
+
+</div>
+
+</div>
+
+
 </div>
 
 </section>
 
-<!-- ================= MEMBERS ================= -->
+
+
+<!-- =====================================================
+MEMBERS
+===================================================== -->
 
 <section id="members">
 
 <div class="container">
 
+<div class="section-header">
+
+<div class="section-number">
+04 / MEMBERS
+</div>
+
 <h2 class="section-title">
-Members
+PEOPLE MAKE<br>
+THE COURSE.
 </h2>
+
+</div>
+
 
 <div class="member-grid">
 
-<div class="member">
-<img src="images/member1.jpg">
-<h3>Seonghyun Jung</h3>
-<p>Signal Processing Lead</p>
-</div>
 
 <div class="member">
-<img src="images/member2.jpg">
-<h3>Siwoo Kim</h3>
-<p>Machine Learning Lead</p>
+
+<img src="images/member1.jpg" alt="Seonghyun Jung">
+
+<h3>
+Seonghyun<br>
+Jung
+</h3>
+
+<p>
+Signal Processing Lead
+</p>
+
 </div>
 
-<div class="member">
-<img src="images/member3.jpg">
-<h3>Eunseol Lee</h3>
-<p>Hardware Lead</p>
-</div>
 
 <div class="member">
-<img src="images/member4.jpg">
-<h3>Minje Kim</h3>
-<p>Validation Lead</p>
+
+<img src="images/member2.jpg" alt="Siwoo Kim">
+
+<h3>
+Siwoo<br>
+Kim
+</h3>
+
+<p>
+Machine Learning Lead
+</p>
+
 </div>
+
+
+<div class="member">
+
+<img src="images/member3.jpg" alt="Eunseol Lee">
+
+<h3>
+Eunseol<br>
+Lee
+</h3>
+
+<p>
+Hardware Lead
+</p>
+
+</div>
+
+
+<div class="member">
+
+<img src="images/member4.jpg" alt="Minje Kim">
+
+<h3>
+Minje<br>
+Kim
+</h3>
+
+<p>
+Validation Lead
+</p>
+
+</div>
+
 
 </div>
 
@@ -548,36 +1514,59 @@ Members
 
 </section>
 
-<!-- ================= PUBLICATIONS ================= -->
+
+
+<!-- =====================================================
+REPORTS
+===================================================== -->
 
 <section id="publications">
 
 <div class="container">
 
+<div class="section-header">
+
+<div class="section-number">
+05 / REPORTS
+</div>
+
 <h2 class="section-title">
-Technical Reports
+DOCUMENT<br>
+WHAT WE BUILD.
 </h2>
+
+</div>
+
 
 <div class="pub-list">
 
 <div class="pub-item">
 
-<b>
-ELECOURSE 2026 Spring Project:
-End-to-End Cuffless Blood Pressure Estimation Pipeline Design
-</b>
+<div class="pub-year">
+2026<br>
+SPRING
+</div>
 
-<br>
+<div class="pub-title">
+
+ELECOURSE 2026 Spring Project:<br>
+End-to-End Cuffless Blood Pressure
+Estimation Pipeline Design
+
+</div>
+
+
+<div class="pub-links">
 
 <a href="reports/BP_Project_Report_2026_eng.pdf">
-Download PDF (ENG)
+ENG ↓
 </a>
 
-<br>
-  
 <a href="reports/BP_Project_Report_2026_kor.pdf">
-Download PDF (KOR)
+KOR ↓
 </a>
+
+</div>
 
 </div>
 
@@ -587,21 +1576,44 @@ Download PDF (KOR)
 
 </section>
 
-<!-- ================= GALLERY ================= -->
+
+
+<!-- =====================================================
+GALLERY
+===================================================== -->
 
 <section id="gallery">
 
 <div class="container">
 
+<div class="section-header">
+
+<div class="section-number">
+06 / GALLERY
+</div>
+
 <h2 class="section-title">
-Gallery
+PROCESS.<br>
+PEOPLE.<br>
+RESULTS.
 </h2>
+
+</div>
+
 
 <div class="gallery">
 
-<img src="images/hardware.png">
-<img src="images/signal_processing.png">
-<img src="images/dashboard.png">
+<img
+src="images/hardware.png"
+alt="ELECOURSE hardware">
+
+<img
+src="images/signal_processing.png"
+alt="Signal Processing">
+
+<img
+src="images/dashboard.png"
+alt="Dashboard">
 
 </div>
 
@@ -609,49 +1621,146 @@ Gallery
 
 </section>
 
-<!-- ================= CONTACT ================= -->
+
+
+<!-- =====================================================
+MANIFESTO
+===================================================== -->
+
+<section class="manifesto">
+
+<div class="manifesto-title">
+
+ENGINEERS<br>
+CONNECT.
+
+</div>
+
+
+<div class="manifesto-right">
+
+<div>
+
+IDEAS<br>
+FLOW.<br><br>
+
+WE SHARE<br>
+A COURSE.<br><br>
+
+WE BUILD<br>
+TOGETHER.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+CONTACT
+===================================================== -->
 
 <section id="contact" class="contact">
 
 <div class="container">
 
-<h2>
-Contact
-</h2>
+<div class="contact-layout">
 
-<p>
-Engineering Learning & Research Community
-</p>
 
-<br>
+<div class="contact-title">
 
-<p>
-GitHub:
-<a href="https://github.com/elecourse2023">
-github.com/elecourse2023
+LET'S<br>
+CONNECT.
+
+</div>
+
+
+<div class="contact-info">
+
+
+<div class="contact-row">
+
+<strong>
+GitHub
+</strong>
+
+<a href="https://github.com/elecourse2023"
+target="_blank">
+
+github.com/elecourse2023 ↗
+
 </a>
-</p>
 
-<p>
-Email:
+</div>
+
+
+<div class="contact-row">
+
+<strong>
+Email
+</strong>
+
+<span>
 elecourse2023@gmail.com
-</p>
+</span>
 
-<p>
-Instagram:
+</div>
+
+
+<div class="contact-row">
+
+<strong>
+Instagram
+</strong>
+
+<span>
 @ele_course
-</p>
+</span>
+
+</div>
+
+
+<div class="contact-row">
+
+<strong>
+Community
+</strong>
+
+<span>
+Engineering Learning & Research Community
+</span>
+
+</div>
+
+
+</div>
+
+</div>
 
 </div>
 
 </section>
 
+
+
+<!-- =====================================================
+FOOTER
+===================================================== -->
+
 <footer>
 
-© 2026 ELECOURSE Research Group.
-All Rights Reserved.
+<span>
+© 2026 ELECOURSE
+</span>
+
+<span>
+ANALYZE. DESIGN. BUILD.
+</span>
 
 </footer>
+
 
 </body>
 </html>
