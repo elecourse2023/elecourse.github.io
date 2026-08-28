@@ -136,13 +136,15 @@ nav{
 }
 
 .logo{
-    font-size:1.65rem;
-    font-weight:900;
-    letter-spacing:-0.06em;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
 }
 
-.logo span{
-    color:white;
+.logo img{
+    width:150px;
+    height:auto;
+    display:block;
 }
 
 .nav-links{
@@ -235,44 +237,30 @@ nav{
     z-index:5;
 }
 
-
-/* GRAPHIC SHAPE */
-
-.hero-shape{
+.hero-symbol{
     position:absolute;
 
-    width:55vw;
-    height:55vw;
+    width:min(58vw,850px);
+    height:auto;
 
     right:-10%;
-    bottom:-23%;
+    bottom:-18%;
 
-    background:var(--blue);
+    z-index:1;
 
-    border-radius:55% 45% 60% 40% / 60% 40% 55% 45%;
-
-    transform:rotate(-12deg);
+    pointer-events:none;
 }
 
-.hero-shape::after{
-    content:"";
-
-    position:absolute;
-
-    width:45%;
-    height:40%;
-
-    left:22%;
-    top:33%;
-
-    background:var(--yellow);
-
-    border-radius:50%;
-
-    transform:rotate(10deg);
+.hero-brand{
+    position:relative;
+    z-index:2;
 }
 
-
+.hero-bottom{
+    position:relative;
+    z-index:2;
+}
+   
 /* RIGHT HERO */
 
 .hero-side{
@@ -1019,9 +1007,9 @@ NAVIGATION
 
 <div class="nav-container">
 
-<div class="logo">
-ELE<span>COURSE</span>
-</div>
+<a href="#" class="logo">
+   <img src="images/ELECOURSE_Wordmark_Blue_TL.svg">
+</a>
 
 <div class="nav-links">
 
@@ -1047,69 +1035,74 @@ HERO
 
 <section class="hero">
 
-<div class="hero-main">
+  <div class="hero-main">
 
-<div class="hero-brand">
+    <div class="hero-brand">
 
-<h1>
-ELE<br>
-COURSE
-</h1>
+      <h1>
+        ELE<br>
+        COURSE
+      </h1>
 
-<div class="hero-tagline">
-Analyze.<br>
-Design.<br>
-Build.
-</div>
+      <div class="hero-tagline">
+        Analyze.<br>
+        Design.<br>
+        Build.
+      </div>
 
-</div>
+    </div>
 
-<div class="hero-bottom">
+    <div class="hero-bottom">
 
-<a href="#project" class="btn btn-primary">
-Explore Projects →
-</a>
+      <a href="#project" class="btn btn-primary">
+        Explore Projects →
+      </a>
 
-<a href="https://github.com/elecourse2023"
-target="_blank"
-class="btn btn-outline">
-GitHub ↗
-</a>
+      <a
+        href="https://github.com/elecourse2023"
+        target="_blank"
+        class="btn btn-outline"
+      >
+        GitHub ↗
+      </a>
 
-</div>
+    </div>
 
-<div class="hero-shape"></div>
+    <img
+      src="images/symbol.svg"
+      alt=""
+      class="hero-symbol"
+      aria-hidden="true"
+    >
 
-</div>
+  </div>
 
+  <div class="hero-side">
 
-<div class="hero-side">
+    <div class="hero-side-top">
+      Engineering<br>
+      Learning &<br>
+      Research<br>
+      Community
+    </div>
 
-<div class="hero-side-top">
-Engineering<br>
-Learning &<br>
-Research<br>
-Community
-</div>
+    <div class="hero-side-info">
 
-<div class="hero-side-info">
+      <strong>
+        SEOUL · KOREA
+      </strong>
 
-<strong>
-SEOUL · KOREA
-</strong>
+      <p>
+        We share a course.<br>
+        We exchange ideas.<br>
+        We build together.
+      </p>
 
-<p>
-We share a course.<br>
-We exchange ideas.<br>
-We build together.
-</p>
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 </section>
-
 
 
 <!-- =====================================================
